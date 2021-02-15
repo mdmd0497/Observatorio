@@ -99,6 +99,7 @@ if(isset($_POST['insert'])){
 						</div>
 						</div>
 						<button type="submit" class="btn btn-info" name="insert">Crear</button>
+                        <a class="btn btn-info" name="volver" href="index.php?pid='<?php echo base64_encode("ui/home.php")?>'">Volver</a>
 					</form>
 				</div>
 			</div>

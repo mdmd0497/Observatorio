@@ -1,1 +1,1 @@
-<script>location.replace("http://observatorio.itiud.org");</script>
+<script>location.replace("http://www1.udistrital.edu.co:8080/web/unidad-de-investigaciones-de-la-facultad-tecnologica/metis");</script>

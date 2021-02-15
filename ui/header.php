@@ -5,10 +5,10 @@
 			<a href="index.php"><img src="img/logo.png" width="100px" /></a>
 		</div>
 		<div class="col-md-6 text-center">
-			<h2>Observatorio de investigación</h2>
+			<h2>Observatorio de investigacion</h2>
 		</div>
 		<div class="col-md-3 text-center">
-			<a href="http://itiud.org" target="_blank"><img src="img/iti.png" width="100px" /></a>
+			<a href="http://www1.udistrital.edu.co:8080/web/unidad-de-investigaciones-de-la-facultad-tecnologica/metis" target="_blank"><img src="img/metis.PNG" width="200px" /></a>
 		</div>
 	</div>
 		<div class="row"></div>

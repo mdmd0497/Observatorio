@@ -35,7 +35,7 @@ if(isset($_POST['logIn'])){
 		}
 		$usuario_ud = new Usuario_ud();
 		if($usuario_ud -> logIn($email, $password)){
-			if($usuario_ud -> getEstado()==1){
+			if($usuario_ud -> getState()==1){
 				$_SESSION['id']=$usuario_ud -> getIdUsuario_ud();
 				$_SESSION['entity']="Usuario_ud";
 				$logUsuario_ud = new LogUsuario_ud("", "Log In", "", date("Y-m-d"), date("H:i:s"), $user_ip, PHP_OS, $browser, $usuario_ud -> getIdUsuario_ud());
@@ -64,11 +64,11 @@ if(isset($_POST['logIn'])){
 <div align="center">
 	<?php include("ui/header.php"); ?>
 </div>
-<div class="container">
+<div class="container" ">
 	<div class="row">
 		<div class="col-md-9">
 			<div class="card">
-				<div class="card-header">
+				<div class="card-header" >
 					<h4><strong>observatorio</strong></h4>
 				</div>
 				<div class="card-body">
@@ -99,6 +99,9 @@ if(isset($_POST['logIn'])){
 						<div class="form-group">
 							<a href="index.php?pid=<?php echo base64_encode("ui/recoverPassword.php") ?>">Recuperar Clave</a>
 						</div>
+                        <div class="form-group">
+                            <a href="index.php?pid=<?php echo base64_encode("ui/usuario_ud/insertUsuario_ud.php") ?>">Crear usuario</a>
+                        </div>
 						<div class="form-group">
 							<button type="submit" class="btn btn-info" name="logIn">Autenticar</button>
 						</div>

@@ -24,6 +24,7 @@ ini_set("display_errors","1");
 date_default_timezone_set("America/Bogota");
 $webPagesNoAuthentication = array(
 	'ui/recoverPassword.php',
+    'ui/usuario_ud/insertUsuario_ud.php',
 );
 $webPages = array(
 	'ui/sessionAdministrador.php',
@@ -141,10 +142,12 @@ if(isset($_GET['logOut'])){
 		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.css" rel="stylesheet">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.1/css/all.css" />
+        <link rel="stylesheet" href="css/styles.css">
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.js"></script>
+
 		<script charset="utf-8">
 			$(function () { 
 				$("[data-toggle='tooltip']").tooltip(); 
@@ -181,6 +184,6 @@ if(isset($_GET['logOut'])){
 			}
 		}
 		?>
-		<div class="text-center text-muted">ITI &copy; <?php echo date("Y")?></div>
+		<div class="text-center text-muted">METIS &copy; <?php echo date("Y")?></div>
 	</body>
 </html>
