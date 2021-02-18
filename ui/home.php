@@ -47,7 +47,7 @@ if(isset($_POST['logIn'])){
 		}
 		$grupo_de_investigacion = new Grupo_de_investigacion();
 		if($grupo_de_investigacion -> logIn($email, $password)){
-			if($grupo_de_investigacion -> getEstado()==1){
+			if($grupo_de_investigacion -> getState()==1){
 				$_SESSION['id']=$grupo_de_investigacion -> getIdGrupo_de_investigacion();
 				$_SESSION['entity']="Grupo_de_investigacion";
 				$logGrupo_de_investigacion = new LogGrupo_de_investigacion("", "Log In", "", date("Y-m-d"), date("H:i:s"), $user_ip, PHP_OS, $browser, $grupo_de_investigacion -> getIdGrupo_de_investigacion());

@@ -92,8 +92,8 @@ if(isset($_POST['insert'])){
 							<input type="text" class="form-control" name="nombre" value="<?php echo $nombre ?>" required />
 						</div>
 						<div class="form-group">
-							<label>Apellido*</label>
-							<input type="text" class="form-control" name="apellido" value="<?php echo $apellido ?>" required />
+
+							<input type="hidden" class="form-control" name="apellido" value="<?php echo $apellido ?>" required />
 						</div>
 						<div class="form-group">
 							<label>Correo*</label>
