@@ -8,6 +8,10 @@ class Pc {
 	private $abreviatura;
 	private $valor_maximo;
 	private $valor_indicador;
+	private $indicador2;
+	private $abreviatura2;
+	private $valor_maximo2;
+	private $valor_indicador2;
 	private $grupo_de_investigacion;
 	private $pcDAO;
 	private $connection;
@@ -51,6 +55,47 @@ class Pc {
 	function setValor_indicador($pValor_indicador) {
 		$this -> valor_indicador = $pValor_indicador;
 	}
+	public function getIndicador2()
+	{
+		return $this->indicador2;
+	}
+
+	public function setIndicador2($pIndicador2)
+	{
+		$this->indicador2 = $pIndicador2;
+	}
+
+
+	public function getAbreviatura2()
+	{
+		return $this->abreviatura2;
+	}
+
+
+	public function setAbreviatura2($pAbreviatura2)
+	{
+		$this->abreviatura2 = $pAbreviatura2;
+	}
+
+	public function getValorMaximo2()
+	{
+		return $this->valor_maximo2;
+	}
+
+	public function setValorMaximo2($pValor_maximo2)
+	{
+		$this->valor_maximo2 = $pValor_maximo2;
+	}
+
+	public function getValorIndicador2()
+	{
+		return $this->valor_indicador2;
+	}
+
+	public function setValorIndicador2($pValor_indicador2)
+	{
+		$this->valor_indicador2 = $pValor_indicador2;
+	}
 
 	function getGrupo_de_investigacion() {
 		return $this -> grupo_de_investigacion;
@@ -60,20 +105,25 @@ class Pc {
 		$this -> grupo_de_investigacion = $pGrupo_de_investigacion;
 	}
 
-	function Pc($pIdPc = "", $pIndicador = "", $pAbreviatura = "", $pValor_maximo = "", $pValor_indicador = "", $pGrupo_de_investigacion = ""){
+	function Pc($pIdPc = "", $pIndicador = "", $pAbreviatura = "", $pValor_maximo = "", $pValor_indicador = "",$pIndicador2 = "", $pAbreviatura2 = "", $pValor_maximo2 = "", $pValor_indicador2= "", $pGrupo_de_investigacion = ""){
 		$this -> idPc = $pIdPc;
 		$this -> indicador = $pIndicador;
 		$this -> abreviatura = $pAbreviatura;
 		$this -> valor_maximo = $pValor_maximo;
 		$this -> valor_indicador = $pValor_indicador;
+		$this -> indicador2 = $pIndicador2;
+		$this -> abreviatura2 = $pAbreviatura2;
+		$this -> valor_maximo2 = $pValor_maximo2;
+		$this -> valor_indicador2 = $pValor_indicador2;
 		$this -> grupo_de_investigacion = $pGrupo_de_investigacion;
-		$this -> pcDAO = new PcDAO($this -> idPc, $this -> indicador, $this -> abreviatura, $this -> valor_maximo, $this -> valor_indicador, $this -> grupo_de_investigacion);
+		$this -> pcDAO = new PcDAO($this -> idPc, $this -> indicador, $this -> abreviatura, $this -> valor_maximo, $this -> valor_indicador,$this -> indicador2, $this -> abreviatura2, $this -> valor_maximo2, $this -> valor_indicador2, $this -> grupo_de_investigacion);
 		$this -> connection = new Connection();
 	}
 
 	function insert(){
 		$this -> connection -> open();
 		$this -> connection -> run($this -> pcDAO -> insert());
+		$this -> connection -> run($this -> pcDAO -> insert2());
 		$this -> connection -> close();
 	}
 

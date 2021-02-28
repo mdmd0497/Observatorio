@@ -80,6 +80,7 @@ if(isset($_POST['insert'])){
 						<div class="form-group">
 							<label>Subtipo_de_producto</label>
 							<textarea id="subtipo_de_producto" name="subtipo_de_producto" ><?php echo $subtipo_de_producto ?></textarea>
+
 							<script>
 								$('#subtipo_de_producto').summernote({
 									tabsize: 2,
