@@ -1,5 +1,5 @@
 <?php
-$order = "apellido";
+$order = "nombre";
 if(isset($_GET['order'])){
 	$order = $_GET['order'];
 }
@@ -37,7 +37,7 @@ if(isset($_GET['action']) && $_GET['action']=="delete"){
 			$logUsuario_ud -> insert();
 		}
 		else if($_SESSION['entity'] == 'Grupo_de_investigacion'){
-			$logGrupo_de_investigacion = new LogGrupo_de_investigacion("","Delete Grupo_de_investigacion", "Nombre: " . $deleteGrupo_de_investigacion -> getNombre() . ";; Apellido: " . $deleteGrupo_de_investigacion -> getApellido() . ";; Correo: " . $deleteGrupo_de_investigacion -> getCorreo() . ";; Clave: " . $deleteGrupo_de_investigacion -> getClave() . ";; Clasificacion: " . $deleteGrupo_de_investigacion -> getClasificacion() . ";; Lider: " . $deleteGrupo_de_investigacion -> getLider() . ";; Area: " . $deleteGrupo_de_investigacion -> getArea() . ";; Pagina_web: " . $deleteGrupo_de_investigacion -> getPagina_web() . ";; State: " . $deleteGrupo_de_investigacion -> getState(), date("Y-m-d"), date("H:i:s"), $user_ip, PHP_OS, $browser, $_SESSION['id']);
+			$logGrupo_de_investigacion = new LogGrupo_de_investigacion("","Delete Grupo_de_investigacion", "Nombre: " . $deleteGrupo_de_investigacion -> getNombre() . ";; Correo: " . $deleteGrupo_de_investigacion -> getCorreo() . ";; Clave: " . $deleteGrupo_de_investigacion -> getClave() . ";; Clasificacion: " . $deleteGrupo_de_investigacion -> getClasificacion() . ";; Lider: " . $deleteGrupo_de_investigacion -> getLider() . ";; Area: " . $deleteGrupo_de_investigacion -> getArea() . ";; Pagina_web: " . $deleteGrupo_de_investigacion -> getPagina_web() . ";; State: " . $deleteGrupo_de_investigacion -> getState(), date("Y-m-d"), date("H:i:s"), $user_ip, PHP_OS, $browser, $_SESSION['id']);
 			$logGrupo_de_investigacion -> insert();
 		}
 	}else{
@@ -81,20 +81,6 @@ if(isset($_GET['action']) && $_GET['action']=="delete"){
 							<span class='fas fa-sort-down'></span>
 						<?php } else { ?>
 							<a href='index.php?pid=<?php echo base64_encode("ui/grupo_de_investigacion/selectAllGrupo_de_investigacion.php") ?>&order=nombre&dir=desc'>
-							<span class='fas fa-sort-amount-down' data-toggle='tooltip' class='tooltipLink' data-original-title='Ordenar Descendente' ></span></a>
-						<?php } ?>
-						</th>
-						<th nowrap>Apellido 
-						<?php if($order=="apellido" && $dir=="asc") { ?>
-							<span class='fas fa-sort-up'></span>
-						<?php } else { ?>
-							<a href='index.php?pid=<?php echo base64_encode("ui/grupo_de_investigacion/selectAllGrupo_de_investigacion.php") ?>&order=apellido&dir=asc'>
-							<span class='fas fa-sort-amount-up' data-toggle='tooltip' class='tooltipLink' data-original-title='Ordenar Ascendente' ></span></a>
-						<?php } ?>
-						<?php if($order=="apellido" && $dir=="desc") { ?>
-							<span class='fas fa-sort-down'></span>
-						<?php } else { ?>
-							<a href='index.php?pid=<?php echo base64_encode("ui/grupo_de_investigacion/selectAllGrupo_de_investigacion.php") ?>&order=apellido&dir=desc'>
 							<span class='fas fa-sort-amount-down' data-toggle='tooltip' class='tooltipLink' data-original-title='Ordenar Descendente' ></span></a>
 						<?php } ?>
 						</th>
@@ -184,7 +170,6 @@ if(isset($_GET['action']) && $_GET['action']=="delete"){
 					foreach ($grupo_de_investigacions as $currentGrupo_de_investigacion) {
 						echo "<tr><td>" . $counter . "</td>";
 						echo "<td>" . $currentGrupo_de_investigacion -> getNombre() . "</td>";
-						echo "<td>" . $currentGrupo_de_investigacion -> getApellido() . "</td>";
 						echo "<td>" . $currentGrupo_de_investigacion -> getCorreo() . "</td>";
 						echo "<td>" . $currentGrupo_de_investigacion -> getClasificacion() . "</td>";
 						echo "<td>" . $currentGrupo_de_investigacion -> getLider() . "</td>";
@@ -202,9 +187,9 @@ if(isset($_GET['action']) && $_GET['action']=="delete"){
 							echo "<a href='index.php?pid=" . base64_encode("ui/grupo_de_investigacion/updateFotoGrupo_de_investigacion.php") . "&idGrupo_de_investigacion=" . $currentGrupo_de_investigacion -> getIdGrupo_de_investigacion() . "&attribute=foto'><span class='fas fa-camera' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='Editar foto'></span></a> ";
 						}
 						if($_SESSION['entity'] == 'Administrador') {
-							echo "<a href='index.php?pid=" . base64_encode("ui/grupo_de_investigacion/selectAllGrupo_de_investigacion.php") . "&idGrupo_de_investigacion=" . $currentGrupo_de_investigacion -> getIdGrupo_de_investigacion() . "&action=delete' onclick='return confirm(\"Confirma eliminar Grupo_de_investigacion: " . $currentGrupo_de_investigacion -> getNombre() . " " . $currentGrupo_de_investigacion -> getApellido() . " " . $currentGrupo_de_investigacion -> getClasificacion() . " " . $currentGrupo_de_investigacion -> getLider() . " " . $currentGrupo_de_investigacion -> getArea() . " " . $currentGrupo_de_investigacion -> getPagina_web() . "\")'><span class='fas fa-backspace' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='Delete Grupo_de_investigacion' ></span></a> ";
+							echo "<a href='index.php?pid=" . base64_encode("ui/grupo_de_investigacion/selectAllGrupo_de_investigacion.php") . "&idGrupo_de_investigacion=" . $currentGrupo_de_investigacion -> getIdGrupo_de_investigacion() . "&action=delete' onclick='return confirm(\"Confirma eliminar Grupo_de_investigacion: " . $currentGrupo_de_investigacion -> getNombre() . " " . $currentGrupo_de_investigacion -> getClasificacion() . " " . $currentGrupo_de_investigacion -> getLider() . " " . $currentGrupo_de_investigacion -> getArea() . " " . $currentGrupo_de_investigacion -> getPagina_web() . "\")'><span class='fas fa-backspace' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='Delete Grupo_de_investigacion' ></span></a> ";
 						}
-						echo "<a href='index.php?pid=" . base64_encode("ui/pc/selectAllPcByGrupo_de_investigacion.php") . "&idGrupo_de_investigacion=" . $currentGrupo_de_investigacion -> getIdGrupo_de_investigacion() . "'><span class='fas fa-search-plus' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='Consultar Pc' ></span></a> ";
+						echo "<a href='index.php?pid=" . base64_encode("ui/pc/selectAllPcByGrupo_de_investigacion.php") . "&idGrupo_de_investigacion=" . $currentGrupo_de_investigacion -> getIdGrupo_de_investigacion() . "'><span class='fas fa-search-plus' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='Consultar PERFIL DE COLABORACION' ></span></a> ";
 						if($_SESSION['entity'] == 'Administrador') {
 							echo "<a href='index.php?pid=" . base64_encode("ui/pc/insertPc.php") . "&idGrupo_de_investigacion=" . $currentGrupo_de_investigacion -> getIdGrupo_de_investigacion() . "'><span class='fas fa-pen' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='Crear Pc' ></span></a> ";
 						}

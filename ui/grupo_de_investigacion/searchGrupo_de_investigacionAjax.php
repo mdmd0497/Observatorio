@@ -8,7 +8,6 @@
 	<thead>
 		<tr><th></th>
 			<th nowrap>Nombre</th>
-			<th nowrap>Apellido</th>
 			<th nowrap>Correo</th>
 			<th nowrap>Clasificacion</th>
 			<th nowrap>Lider</th>
@@ -26,7 +25,6 @@
 		foreach ($grupo_de_investigacions as $currentGrupo_de_investigacion) {
 			echo "<tr><td>" . $counter . "</td>";
 			echo "<td>" . str_ireplace($_GET['search'], "<mark>" . $_GET['search'] . "</mark>", $currentGrupo_de_investigacion -> getNombre()) . "</td>";
-			echo "<td>" . str_ireplace($_GET['search'], "<mark>" . $_GET['search'] . "</mark>", $currentGrupo_de_investigacion -> getApellido()) . "</td>";
 			echo "<td>" . str_ireplace($_GET['search'], "<mark>" . $_GET['search'] . "</mark>", $currentGrupo_de_investigacion -> getCorreo()) . "</td>";
 			echo "<td>" . str_ireplace($_GET['search'], "<mark>" . $_GET['search'] . "</mark>", $currentGrupo_de_investigacion -> getClasificacion()) . "</td>";
 			echo "<td>" . str_ireplace($_GET['search'], "<mark>" . $_GET['search'] . "</mark>", $currentGrupo_de_investigacion -> getLider()) . "</td>";
@@ -44,9 +42,9 @@
 							echo "<a href='index.php?pid=" . base64_encode("ui/grupo_de_investigacion/updateFotoGrupo_de_investigacion.php") . "&idGrupo_de_investigacion=" . $currentGrupo_de_investigacion -> getIdGrupo_de_investigacion() . "&attribute=foto'><span class='fas fa-camera' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='Editar foto'></span></a> ";
 						}
 						if($_GET['entity'] == 'Administrador') {
-							echo "<a href='index.php?pid=" . base64_encode("ui/grupo_de_investigacion/selectAllGrupo_de_investigacion.php") . "&idGrupo_de_investigacion=" . $currentGrupo_de_investigacion -> getIdGrupo_de_investigacion() . "&action=delete' onclick='return confirm(\"Confirm to delete Grupo_de_investigacion: " . $currentGrupo_de_investigacion -> getNombre() . " " . $currentGrupo_de_investigacion -> getApellido() . " " . $currentGrupo_de_investigacion -> getClasificacion() . " " . $currentGrupo_de_investigacion -> getLider() . " " . $currentGrupo_de_investigacion -> getArea() . " " . $currentGrupo_de_investigacion -> getPagina_web() . "\")'><span class='fas fa-backspace' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='Delete Grupo_de_investigacion' ></span></a> ";
+							echo "<a href='index.php?pid=" . base64_encode("ui/grupo_de_investigacion/selectAllGrupo_de_investigacion.php") . "&idGrupo_de_investigacion=" . $currentGrupo_de_investigacion -> getIdGrupo_de_investigacion() . "&action=delete' onclick='return confirm(\"Confirm to delete Grupo_de_investigacion: " . $currentGrupo_de_investigacion -> getNombre() . " " . $currentGrupo_de_investigacion -> getClasificacion() . " " . $currentGrupo_de_investigacion -> getLider() . " " . $currentGrupo_de_investigacion -> getArea() . " " . $currentGrupo_de_investigacion -> getPagina_web() . "\")'><span class='fas fa-backspace' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='Delete Grupo_de_investigacion' ></span></a> ";
 						}
-						echo "<a href='index.php?pid=" . base64_encode("ui/pc/selectAllPcByGrupo_de_investigacion.php") . "&idGrupo_de_investigacion=" . $currentGrupo_de_investigacion -> getIdGrupo_de_investigacion() . "'><span class='fas fa-search-plus' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='Consultar Pc' ></span></a> ";
+						echo "<a href='index.php?pid=" . base64_encode("ui/pc/selectAllPcByGrupo_de_investigacion.php") . "&idGrupo_de_investigacion=" . $currentGrupo_de_investigacion -> getIdGrupo_de_investigacion() . "'><span class='fas fa-search-plus' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='Consultar PERFIL DE COLABORACION' ></span></a> ";
 						if($_GET['entity'] == 'Administrador') {
 							echo "<a href='index.php?pid=" . base64_encode("ui/pc/insertPc.php") . "&idGrupo_de_investigacion=" . $currentGrupo_de_investigacion -> getIdGrupo_de_investigacion() . "'><span class='fas fa-pen' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='Crear Pc' ></span></a> ";
 						}

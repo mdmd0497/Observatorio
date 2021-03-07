@@ -26,7 +26,7 @@
 			echo "<td>" . str_ireplace($_GET['search'], "<mark>" . $_GET['search'] . "</mark>", $currentPc -> getAbreviatura()) . "</td>";
 			echo "<td>" . str_ireplace($_GET['search'], "<mark>" . $_GET['search'] . "</mark>", $currentPc -> getValor_maximo()) . "</td>";
 			echo "<td>" . str_ireplace($_GET['search'], "<mark>" . $_GET['search'] . "</mark>", $currentPc -> getValor_indicador()) . "</td>";
-			echo "<td>" . $currentPc -> getGrupo_de_investigacion() -> getNombre() . " " . $currentPc -> getGrupo_de_investigacion() -> getApellido() . " " . $currentPc -> getGrupo_de_investigacion() -> getClasificacion() . " " . $currentPc -> getGrupo_de_investigacion() -> getLider() . " " . $currentPc -> getGrupo_de_investigacion() -> getArea() . " " . $currentPc -> getGrupo_de_investigacion() -> getPagina_web() . "</td>";
+			echo "<td>" . $currentPc -> getGrupo_de_investigacion() -> getNombre() . "</td>";
 						echo "<td class='text-right' nowrap>";
 						if($_GET['entity'] == 'Administrador' || $_GET['entity'] == 'Grupo_de_investigacion') {
 							echo "<a href='index.php?pid=" . base64_encode("ui/pc/updatePc.php") . "&idPc=" . $currentPc -> getIdPc() . "'><span class='fas fa-edit' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='Editar Pc' ></span></a> ";

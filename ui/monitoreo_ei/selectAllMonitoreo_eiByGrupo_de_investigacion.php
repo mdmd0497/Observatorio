@@ -14,7 +14,7 @@ if(!empty($_GET['action']) && $_GET['action']=="delete"){
 	$deleteMonitoreo_ei = new Monitoreo_ei($_GET['idMonitoreo_ei']);
 	$deleteMonitoreo_ei -> select();
 	if($deleteMonitoreo_ei -> delete()){
-		$nameGrupo_de_investigacion = $deleteMonitoreo_ei -> getGrupo_de_investigacion() -> getNombre() . " " . $deleteMonitoreo_ei -> getGrupo_de_investigacion() -> getApellido() . " " . $deleteMonitoreo_ei -> getGrupo_de_investigacion() -> getClasificacion() . " " . $deleteMonitoreo_ei -> getGrupo_de_investigacion() -> getLider() . " " . $deleteMonitoreo_ei -> getGrupo_de_investigacion() -> getArea() . " " . $deleteMonitoreo_ei -> getGrupo_de_investigacion() -> getPagina_web();
+		$nameGrupo_de_investigacion = $deleteMonitoreo_ei -> getGrupo_de_investigacion() -> getNombre();
 		$user_ip = getenv('REMOTE_ADDR');
 		$agent = $_SERVER["HTTP_USER_AGENT"];
 		$browser = "-";
@@ -51,7 +51,7 @@ if(!empty($_GET['action']) && $_GET['action']=="delete"){
 <div class="container-fluid">
 	<div class="card">
 		<div class="card-header">
-			<h4 class="card-title">Consultar Monitoreo_ei de Grupo_de_investigacion: <em><?php echo $grupo_de_investigacion -> getNombre() . " " . $grupo_de_investigacion -> getApellido() . " " . $grupo_de_investigacion -> getClasificacion() . " " . $grupo_de_investigacion -> getLider() . " " . $grupo_de_investigacion -> getArea() . " " . $grupo_de_investigacion -> getPagina_web() ?></em></h4>
+			<h4 class="card-title">Consultar Monitoreo_ei de Grupo_de_investigacion: <em><?php echo $grupo_de_investigacion -> getNombre() ?></em></h4>
 		</div>
 		<div class="card-body">
 		<?php if(isset($_GET['action']) && $_GET['action']=="delete"){ ?>
@@ -118,7 +118,7 @@ if(!empty($_GET['action']) && $_GET['action']=="delete"){
 						echo "<tr><td>" . $counter . "</td>";
 						echo "<td>" . $currentMonitoreo_ei -> getVariable() . "</td>";
 						echo "<td>" . $currentMonitoreo_ei -> getCalificacion() . "</td>";
-						echo "<td><a href='modalGrupo_de_investigacion.php?idGrupo_de_investigacion=" . $currentMonitoreo_ei -> getGrupo_de_investigacion() -> getIdGrupo_de_investigacion() . "' data-toggle='modal' data-target='#modalMonitoreo_ei' >" . $currentMonitoreo_ei -> getGrupo_de_investigacion() -> getNombre() . " " . $currentMonitoreo_ei -> getGrupo_de_investigacion() -> getApellido() . " " . $currentMonitoreo_ei -> getGrupo_de_investigacion() -> getClasificacion() . " " . $currentMonitoreo_ei -> getGrupo_de_investigacion() -> getLider() . " " . $currentMonitoreo_ei -> getGrupo_de_investigacion() -> getArea() . " " . $currentMonitoreo_ei -> getGrupo_de_investigacion() -> getPagina_web() . "</a></td>";
+						echo "<td><a href='modalGrupo_de_investigacion.php?idGrupo_de_investigacion=" . $currentMonitoreo_ei -> getGrupo_de_investigacion() -> getIdGrupo_de_investigacion() . "' data-toggle='modal' data-target='#modalMonitoreo_ei' >" . $currentMonitoreo_ei -> getGrupo_de_investigacion() -> getNombre() . "</a></td>";
 						echo "<td class='text-right' nowrap>";
 						if($_SESSION['entity'] == 'Administrador' || $_SESSION['entity'] == 'Grupo_de_investigacion') {
 							echo "<a href='index.php?pid=" . base64_encode("ui/monitoreo_ei/updateMonitoreo_ei.php") . "&idMonitoreo_ei=" . $currentMonitoreo_ei -> getIdMonitoreo_ei() . "'><span class='fas fa-edit' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='Editar Monitoreo_ei' ></span></a> ";

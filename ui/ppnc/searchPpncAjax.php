@@ -26,7 +26,7 @@
 			echo "<td>" . str_ireplace($_GET['search'], "<mark>" . $_GET['search'] . "</mark>", $currentPpnc -> getAbreviatura()) . "</td>";
 			echo "<td>" . str_ireplace($_GET['search'], "<mark>" . $_GET['search'] . "</mark>", $currentPpnc -> getValor_maximo()) . "</td>";
 			echo "<td>" . str_ireplace($_GET['search'], "<mark>" . $_GET['search'] . "</mark>", $currentPpnc -> getValor_indicador()) . "</td>";
-			echo "<td>" . $currentPpnc -> getGrupo_de_investigacion() -> getNombre() . " " . $currentPpnc -> getGrupo_de_investigacion() -> getApellido() . " " . $currentPpnc -> getGrupo_de_investigacion() -> getClasificacion() . " " . $currentPpnc -> getGrupo_de_investigacion() -> getLider() . " " . $currentPpnc -> getGrupo_de_investigacion() -> getArea() . " " . $currentPpnc -> getGrupo_de_investigacion() -> getPagina_web() . "</td>";
+			echo "<td>" . $currentPpnc -> getGrupo_de_investigacion() -> getNombre() . "</td>";
 						echo "<td class='text-right' nowrap>";
 						if($_GET['entity'] == 'Administrador' || $_GET['entity'] == 'Grupo_de_investigacion') {
 							echo "<a href='index.php?pid=" . base64_encode("ui/ppnc/updatePpnc.php") . "&idPpnc=" . $currentPpnc -> getIdPpnc() . "'><span class='fas fa-edit' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='Editar Ppnc' ></span></a> ";

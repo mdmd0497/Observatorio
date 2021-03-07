@@ -40,10 +40,6 @@ $grupo_de_investigacion -> select();
 			<td><?php echo $grupo_de_investigacion -> getNombre() ?></td>
 		</tr>
 		<tr>
-			<th>Apellido</th>
-			<td><?php echo $grupo_de_investigacion -> getApellido() ?></td>
-		</tr>
-		<tr>
 			<th>Correo</th>
 			<td><?php echo $grupo_de_investigacion -> getCorreo() ?></td>
 		</tr>

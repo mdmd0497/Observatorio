@@ -4,10 +4,7 @@ $nombre="";
 if(isset($_POST['nombre'])){
 	$nombre=$_POST['nombre'];
 }
-$apellido="";
-if(isset($_POST['apellido'])){
-	$apellido=$_POST['apellido'];
-}
+
 $correo="";
 if(isset($_POST['correo'])){
 	$correo=$_POST['correo'];
@@ -64,7 +61,7 @@ if(isset($_POST['insert'])){
 		$logUsuario_ud -> insert();
 	}
 	else if($_SESSION['entity'] == 'Grupo_de_investigacion'){
-		$logGrupo_de_investigacion = new LogGrupo_de_investigacion("","Crear Grupo_de_investigacion", "Nombre: " . $nombre . "; Apellido: " . $apellido . "; Correo: " . $correo . "; Clave: " . $clave . "; Clasificacion: " . $Clasificacion . "; Lider: " . $Lider . "; Area: " . $Area . "; Pagina_web: " . $Pagina_web . "; State: " . $state, date("Y-m-d"), date("H:i:s"), $user_ip, PHP_OS, $browser, $_SESSION['id']);
+		$logGrupo_de_investigacion = new LogGrupo_de_investigacion("","Crear Grupo_de_investigacion", "Nombre: " . $nombre . ";Correo: " . $correo . "; Clave: " . $clave . "; Clasificacion: " . $Clasificacion . "; Lider: " . $Lider . "; Area: " . $Area . "; Pagina_web: " . $Pagina_web . "; State: " . $state, date("Y-m-d"), date("H:i:s"), $user_ip, PHP_OS, $browser, $_SESSION['id']);
 		$logGrupo_de_investigacion -> insert();
 	}
 	$processed=true;
@@ -90,10 +87,6 @@ if(isset($_POST['insert'])){
 						<div class="form-group">
 							<label>Nombre*</label>
 							<input type="text" class="form-control" name="nombre" value="<?php echo $nombre ?>" required />
-						</div>
-						<div class="form-group">
-
-							<input type="hidden" class="form-control" name="apellido" value="<?php echo $apellido ?>" required />
 						</div>
 						<div class="form-group">
 							<label>Correo*</label>

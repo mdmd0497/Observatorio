@@ -22,7 +22,7 @@
 			echo "<tr><td>" . $counter . "</td>";
 			echo "<td>" . str_ireplace($_GET['search'], "<mark>" . $_GET['search'] . "</mark>", $currentEmpresas_centros_investigacion -> getVariable()) . "</td>";
 			echo "<td>" . str_ireplace($_GET['search'], "<mark>" . $_GET['search'] . "</mark>", $currentEmpresas_centros_investigacion -> getCalificacion()) . "</td>";
-			echo "<td>" . $currentEmpresas_centros_investigacion -> getGrupo_de_investigacion() -> getNombre() . " " . $currentEmpresas_centros_investigacion -> getGrupo_de_investigacion() -> getApellido() . " " . $currentEmpresas_centros_investigacion -> getGrupo_de_investigacion() -> getClasificacion() . " " . $currentEmpresas_centros_investigacion -> getGrupo_de_investigacion() -> getLider() . " " . $currentEmpresas_centros_investigacion -> getGrupo_de_investigacion() -> getArea() . " " . $currentEmpresas_centros_investigacion -> getGrupo_de_investigacion() -> getPagina_web() . "</td>";
+			echo "<td>" . $currentEmpresas_centros_investigacion -> getGrupo_de_investigacion() -> getNombre(). "</td>";
 						echo "<td class='text-right' nowrap>";
 						if($_GET['entity'] == 'Administrador' || $_GET['entity'] == 'Grupo_de_investigacion') {
 							echo "<a href='index.php?pid=" . base64_encode("ui/empresas_centros_investigacion/updateEmpresas_centros_investigacion.php") . "&idEmpresas_centros_investigacion=" . $currentEmpresas_centros_investigacion -> getIdEmpresas_centros_investigacion() . "'><span class='fas fa-edit' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='Editar Empresas_centros_investigacion' ></span></a> ";

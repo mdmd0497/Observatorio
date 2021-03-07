@@ -12,7 +12,7 @@ if(isset($_GET['action']) && $_GET['action']=="delete"){
 	$deletePpfr = new Ppfr($_GET['idPpfr']);
 	$deletePpfr -> select();
 	if($deletePpfr -> delete()){
-		$nameGrupo_de_investigacion = $deletePpfr -> getGrupo_de_investigacion() -> getNombre() . " " . $deletePpfr -> getGrupo_de_investigacion() -> getApellido() . " " . $deletePpfr -> getGrupo_de_investigacion() -> getClasificacion() . " " . $deletePpfr -> getGrupo_de_investigacion() -> getLider() . " " . $deletePpfr -> getGrupo_de_investigacion() -> getArea() . " " . $deletePpfr -> getGrupo_de_investigacion() -> getPagina_web();
+		$nameGrupo_de_investigacion = $deletePpfr -> getGrupo_de_investigacion() -> getNombre();
 		$user_ip = getenv('REMOTE_ADDR');
 		$agent = $_SERVER["HTTP_USER_AGENT"];
 		$browser = "-";
@@ -146,7 +146,7 @@ if(isset($_GET['action']) && $_GET['action']=="delete"){
 						echo "<td>" . $currentPpfr -> getAbreviatura() . "</td>";
 						echo "<td>" . $currentPpfr -> getValor_maximo() . "</td>";
 						echo "<td>" . $currentPpfr -> getValor_indicador() . "</td>";
-						echo "<td><a href='modalGrupo_de_investigacion.php?idGrupo_de_investigacion=" . $currentPpfr -> getGrupo_de_investigacion() -> getIdGrupo_de_investigacion() . "' data-toggle='modal' data-target='#modalPpfr' >" . $currentPpfr -> getGrupo_de_investigacion() -> getNombre() . " " . $currentPpfr -> getGrupo_de_investigacion() -> getApellido() . " " . $currentPpfr -> getGrupo_de_investigacion() -> getClasificacion() . " " . $currentPpfr -> getGrupo_de_investigacion() -> getLider() . " " . $currentPpfr -> getGrupo_de_investigacion() -> getArea() . " " . $currentPpfr -> getGrupo_de_investigacion() -> getPagina_web() . "</a></td>";
+						echo "<td><a href='modalGrupo_de_investigacion.php?idGrupo_de_investigacion=" . $currentPpfr -> getGrupo_de_investigacion() -> getIdGrupo_de_investigacion() . "' data-toggle='modal' data-target='#modalPpfr' >" . $currentPpfr -> getGrupo_de_investigacion() -> getNombre() . "</a></td>";
 						echo "<td class='text-right' nowrap>";
 						if($_SESSION['entity'] == 'Administrador' || $_SESSION['entity'] == 'Grupo_de_investigacion') {
 							echo "<a href='index.php?pid=" . base64_encode("ui/ppfr/updatePpfr.php") . "&idPpfr=" . $currentPpfr -> getIdPpfr() . "'><span class='fas fa-edit' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='Editar Ppfr' ></span></a> ";

@@ -12,7 +12,7 @@ if(isset($_GET['action']) && $_GET['action']=="delete"){
 	$deleteInversion = new Inversion($_GET['idInversion']);
 	$deleteInversion -> select();
 	if($deleteInversion -> delete()){
-		$nameGrupo_de_investigacion = $deleteInversion -> getGrupo_de_investigacion() -> getNombre() . " " . $deleteInversion -> getGrupo_de_investigacion() -> getApellido() . " " . $deleteInversion -> getGrupo_de_investigacion() -> getClasificacion() . " " . $deleteInversion -> getGrupo_de_investigacion() -> getLider() . " " . $deleteInversion -> getGrupo_de_investigacion() -> getArea() . " " . $deleteInversion -> getGrupo_de_investigacion() -> getPagina_web();
+		$nameGrupo_de_investigacion = $deleteInversion -> getGrupo_de_investigacion() -> getNombre();
 		$user_ip = getenv('REMOTE_ADDR');
 		$agent = $_SERVER["HTTP_USER_AGENT"];
 		$browser = "-";
@@ -116,7 +116,7 @@ if(isset($_GET['action']) && $_GET['action']=="delete"){
 						echo "<tr><td>" . $counter . "</td>";
 						echo "<td>" . $currentInversion -> getVariable() . "</td>";
 						echo "<td>" . $currentInversion -> getCalificacion() . "</td>";
-						echo "<td><a href='modalGrupo_de_investigacion.php?idGrupo_de_investigacion=" . $currentInversion -> getGrupo_de_investigacion() -> getIdGrupo_de_investigacion() . "' data-toggle='modal' data-target='#modalInversion' >" . $currentInversion -> getGrupo_de_investigacion() -> getNombre() . " " . $currentInversion -> getGrupo_de_investigacion() -> getApellido() . " " . $currentInversion -> getGrupo_de_investigacion() -> getClasificacion() . " " . $currentInversion -> getGrupo_de_investigacion() -> getLider() . " " . $currentInversion -> getGrupo_de_investigacion() -> getArea() . " " . $currentInversion -> getGrupo_de_investigacion() -> getPagina_web() . "</a></td>";
+						echo "<td><a href='modalGrupo_de_investigacion.php?idGrupo_de_investigacion=" . $currentInversion -> getGrupo_de_investigacion() -> getIdGrupo_de_investigacion() . "' data-toggle='modal' data-target='#modalInversion' >" . $currentInversion -> getGrupo_de_investigacion() -> getNombre() . "</a></td>";
 						echo "<td class='text-right' nowrap>";
 						if($_SESSION['entity'] == 'Administrador' || $_SESSION['entity'] == 'Grupo_de_investigacion') {
 							echo "<a href='index.php?pid=" . base64_encode("ui/inversion/updateInversion.php") . "&idInversion=" . $currentInversion -> getIdInversion() . "'><span class='fas fa-edit' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='Editar Inversion' ></span></a> ";

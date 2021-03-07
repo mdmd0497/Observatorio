@@ -12,7 +12,7 @@ if(isset($_GET['action']) && $_GET['action']=="delete"){
 	$deletePpnc = new Ppnc($_GET['idPpnc']);
 	$deletePpnc -> select();
 	if($deletePpnc -> delete()){
-		$nameGrupo_de_investigacion = $deletePpnc -> getGrupo_de_investigacion() -> getNombre() . " " . $deletePpnc -> getGrupo_de_investigacion() -> getApellido() . " " . $deletePpnc -> getGrupo_de_investigacion() -> getClasificacion() . " " . $deletePpnc -> getGrupo_de_investigacion() -> getLider() . " " . $deletePpnc -> getGrupo_de_investigacion() -> getArea() . " " . $deletePpnc -> getGrupo_de_investigacion() -> getPagina_web();
+		$nameGrupo_de_investigacion = $deletePpnc -> getGrupo_de_investigacion() -> getNombre();
 		$user_ip = getenv('REMOTE_ADDR');
 		$agent = $_SERVER["HTTP_USER_AGENT"];
 		$browser = "-";
@@ -146,7 +146,7 @@ if(isset($_GET['action']) && $_GET['action']=="delete"){
 						echo "<td>" . $currentPpnc -> getAbreviatura() . "</td>";
 						echo "<td>" . $currentPpnc -> getValor_maximo() . "</td>";
 						echo "<td>" . $currentPpnc -> getValor_indicador() . "</td>";
-						echo "<td><a href='modalGrupo_de_investigacion.php?idGrupo_de_investigacion=" . $currentPpnc -> getGrupo_de_investigacion() -> getIdGrupo_de_investigacion() . "' data-toggle='modal' data-target='#modalPpnc' >" . $currentPpnc -> getGrupo_de_investigacion() -> getNombre() . " " . $currentPpnc -> getGrupo_de_investigacion() -> getApellido() . " " . $currentPpnc -> getGrupo_de_investigacion() -> getClasificacion() . " " . $currentPpnc -> getGrupo_de_investigacion() -> getLider() . " " . $currentPpnc -> getGrupo_de_investigacion() -> getArea() . " " . $currentPpnc -> getGrupo_de_investigacion() -> getPagina_web() . "</a></td>";
+						echo "<td><a href='modalGrupo_de_investigacion.php?idGrupo_de_investigacion=" . $currentPpnc -> getGrupo_de_investigacion() -> getIdGrupo_de_investigacion() . "' data-toggle='modal' data-target='#modalPpnc' >" . $currentPpnc -> getGrupo_de_investigacion() -> getNombre() . "</a></td>";
 						echo "<td class='text-right' nowrap>";
 						if($_SESSION['entity'] == 'Administrador' || $_SESSION['entity'] == 'Grupo_de_investigacion') {
 							echo "<a href='index.php?pid=" . base64_encode("ui/ppnc/updatePpnc.php") . "&idPpnc=" . $currentPpnc -> getIdPpnc() . "'><span class='fas fa-edit' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='Editar Ppnc' ></span></a> ";

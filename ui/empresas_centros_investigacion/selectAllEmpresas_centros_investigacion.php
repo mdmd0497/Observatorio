@@ -12,7 +12,7 @@ if(isset($_GET['action']) && $_GET['action']=="delete"){
 	$deleteEmpresas_centros_investigacion = new Empresas_centros_investigacion($_GET['idEmpresas_centros_investigacion']);
 	$deleteEmpresas_centros_investigacion -> select();
 	if($deleteEmpresas_centros_investigacion -> delete()){
-		$nameGrupo_de_investigacion = $deleteEmpresas_centros_investigacion -> getGrupo_de_investigacion() -> getNombre() . " " . $deleteEmpresas_centros_investigacion -> getGrupo_de_investigacion() -> getApellido() . " " . $deleteEmpresas_centros_investigacion -> getGrupo_de_investigacion() -> getClasificacion() . " " . $deleteEmpresas_centros_investigacion -> getGrupo_de_investigacion() -> getLider() . " " . $deleteEmpresas_centros_investigacion -> getGrupo_de_investigacion() -> getArea() . " " . $deleteEmpresas_centros_investigacion -> getGrupo_de_investigacion() -> getPagina_web();
+		$nameGrupo_de_investigacion = $deleteEmpresas_centros_investigacion -> getGrupo_de_investigacion() -> getNombre();
 		$user_ip = getenv('REMOTE_ADDR');
 		$agent = $_SERVER["HTTP_USER_AGENT"];
 		$browser = "-";
@@ -116,7 +116,7 @@ if(isset($_GET['action']) && $_GET['action']=="delete"){
 						echo "<tr><td>" . $counter . "</td>";
 						echo "<td>" . $currentEmpresas_centros_investigacion -> getVariable() . "</td>";
 						echo "<td>" . $currentEmpresas_centros_investigacion -> getCalificacion() . "</td>";
-						echo "<td><a href='modalGrupo_de_investigacion.php?idGrupo_de_investigacion=" . $currentEmpresas_centros_investigacion -> getGrupo_de_investigacion() -> getIdGrupo_de_investigacion() . "' data-toggle='modal' data-target='#modalEmpresas_centros_investigacion' >" . $currentEmpresas_centros_investigacion -> getGrupo_de_investigacion() -> getNombre() . " " . $currentEmpresas_centros_investigacion -> getGrupo_de_investigacion() -> getApellido() . " " . $currentEmpresas_centros_investigacion -> getGrupo_de_investigacion() -> getClasificacion() . " " . $currentEmpresas_centros_investigacion -> getGrupo_de_investigacion() -> getLider() . " " . $currentEmpresas_centros_investigacion -> getGrupo_de_investigacion() -> getArea() . " " . $currentEmpresas_centros_investigacion -> getGrupo_de_investigacion() -> getPagina_web() . "</a></td>";
+						echo "<td><a href='modalGrupo_de_investigacion.php?idGrupo_de_investigacion=" . $currentEmpresas_centros_investigacion -> getGrupo_de_investigacion() -> getIdGrupo_de_investigacion() . "' data-toggle='modal' data-target='#modalEmpresas_centros_investigacion' >" . $currentEmpresas_centros_investigacion -> getGrupo_de_investigacion() -> getNombre() . "</a></td>";
 						echo "<td class='text-right' nowrap>";
 						if($_SESSION['entity'] == 'Administrador' || $_SESSION['entity'] == 'Grupo_de_investigacion') {
 							echo "<a href='index.php?pid=" . base64_encode("ui/empresas_centros_investigacion/updateEmpresas_centros_investigacion.php") . "&idEmpresas_centros_investigacion=" . $currentEmpresas_centros_investigacion -> getIdEmpresas_centros_investigacion() . "'><span class='fas fa-edit' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='Editar Empresas_centros_investigacion' ></span></a> ";

@@ -21,7 +21,7 @@ if(isset($_POST['update'])){
 	$updateCultura_investigativa -> select();
 	$objGrupo_de_investigacion = new Grupo_de_investigacion($grupo_de_investigacion);
 	$objGrupo_de_investigacion -> select();
-	$nameGrupo_de_investigacion = $objGrupo_de_investigacion -> getNombre() . " " . $objGrupo_de_investigacion -> getApellido() . " " . $objGrupo_de_investigacion -> getClasificacion() . " " . $objGrupo_de_investigacion -> getLider() . " " . $objGrupo_de_investigacion -> getArea() . " " . $objGrupo_de_investigacion -> getPagina_web() ;
+	$nameGrupo_de_investigacion = $objGrupo_de_investigacion -> getNombre();
 	$user_ip = getenv('REMOTE_ADDR');
 	$agent = $_SERVER["HTTP_USER_AGENT"];
 	$browser = "-";
@@ -69,7 +69,7 @@ if(isset($_POST['update'])){
 						</button>
 					</div>
 					<?php } ?>
-					<form id="form" method="post" action="index.php?pid=<?php echo base64_encode("ui/cultura_investigativa/updateCultura_investigativa.php") . "&idCultura_investigativa=" . $idCultura_investigativa ?>" class="bootstrap-form needs-validation"   >
+					<form id="form" method="post" action="index.php?pid=<?php echo base64_encode("ui/cultura_investigativa/updateCultura_investigativa.php") . "&idCultura_investigativa=" . $idCultura_investigativa ?>" class="bootstrap-form needs-validation"  >
 						<div class="form-group">
 							<label>Variable</label>
 							<textarea id="variable" name="variable" ><?php echo $updateCultura_investigativa -> getVariable() ?></textarea>
@@ -95,7 +95,7 @@ if(isset($_POST['update'])){
 								if($currentGrupo_de_investigacion -> getIdGrupo_de_investigacion() == $updateCultura_investigativa -> getGrupo_de_investigacion() -> getIdGrupo_de_investigacion()){
 									echo " selected";
 								}
-								echo ">" . $currentGrupo_de_investigacion -> getNombre() . " " . $currentGrupo_de_investigacion -> getApellido() . " " . $currentGrupo_de_investigacion -> getClasificacion() . " " . $currentGrupo_de_investigacion -> getLider() . " " . $currentGrupo_de_investigacion -> getArea() . " " . $currentGrupo_de_investigacion -> getPagina_web() . "</option>";
+								echo ">" . $currentGrupo_de_investigacion -> getNombre() . "</option>";
 							}
 							?>
 						</select>

@@ -11,9 +11,9 @@ $usuario_ud -> select();
 				<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Consultar</a>
 				<div class="dropdown-menu">
                     <a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/grupo_de_investigacion/selectAllGrupo_de_investigacion.php") ?>">Grupo_de_investigacion</a>
-					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/pc/selectAllPc.php") ?>">Pc</a>
-					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/ppnc/selectAllPpnc.php") ?>">Ppnc</a>
-					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/ppaidi/selectAllPpaidi.php") ?>">Ppaidi</a>
+					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/pc/selectAllPc.php") ?>">Perfil de colaboracion</a>
+					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/ppnc/selectAllPpnc.php") ?>">Perfil de productos resultado de actividades de generación de nuevo conocimiento</a>
+					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/ppaidi/selectAllPpaidi.php") ?>">Perfil de productos resultado de actividades de Desarrollo Tecnológico e Innovación</a>
 					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/ppfr/selectAllPpfr.php") ?>">Ppfr</a>
 					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/productos/selectAllProductos.php") ?>">Productos</a>
 					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/cultura_investigativa/selectAllCultura_investigativa.php") ?>">Cultura_investigativa</a>
@@ -31,10 +31,10 @@ $usuario_ud -> select();
 			<li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Buscar</a>
 				<div class="dropdown-menu">
-					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/pc/searchPc.php") ?>">Pc</a>
-					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/ppnc/searchPpnc.php") ?>">Ppnc</a>
-					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/ppaidi/searchPpaidi.php") ?>">Ppaidi</a>
-					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/ppfr/searchPpfr.php") ?>">Ppfr</a>
+					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/pc/searchPc.php") ?>">Perfil de colaboracion</a>
+					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/ppnc/searchPpnc.php") ?>">Perfil de productos resultado de actividades de generación de nuevo conocimiento</a>
+					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/ppaidi/searchPpaidi.php") ?>">Perfil de productos resultado de actividades de Desarrollo Tecnológico e Innovación</a>
+					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/ppfr/searchPpfr.php") ?>">Perfil de productos resultado de actividades relacionadas con la Formación del Recurso Humano en CTI</a>
 					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/productos/searchProductos.php") ?>">Productos</a>
 					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/cultura_investigativa/searchCultura_investigativa.php") ?>">Cultura_investigativa</a>
 					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/inversion/searchInversion.php") ?>">Inversion</a>

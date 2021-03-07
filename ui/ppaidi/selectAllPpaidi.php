@@ -12,7 +12,7 @@ if(isset($_GET['action']) && $_GET['action']=="delete"){
 	$deletePpaidi = new Ppaidi($_GET['idPpaidi']);
 	$deletePpaidi -> select();
 	if($deletePpaidi -> delete()){
-		$nameGrupo_de_investigacion = $deletePpaidi -> getGrupo_de_investigacion() -> getNombre() . " " . $deletePpaidi -> getGrupo_de_investigacion() -> getApellido() . " " . $deletePpaidi -> getGrupo_de_investigacion() -> getClasificacion() . " " . $deletePpaidi -> getGrupo_de_investigacion() -> getLider() . " " . $deletePpaidi -> getGrupo_de_investigacion() -> getArea() . " " . $deletePpaidi -> getGrupo_de_investigacion() -> getPagina_web();
+		$nameGrupo_de_investigacion = $deletePpaidi -> getGrupo_de_investigacion() -> getNombre();
 		$user_ip = getenv('REMOTE_ADDR');
 		$agent = $_SERVER["HTTP_USER_AGENT"];
 		$browser = "-";
@@ -146,7 +146,7 @@ if(isset($_GET['action']) && $_GET['action']=="delete"){
 						echo "<td>" . $currentPpaidi -> getAbreviatura() . "</td>";
 						echo "<td>" . $currentPpaidi -> getValor_maximo() . "</td>";
 						echo "<td>" . $currentPpaidi -> getValor_indicador() . "</td>";
-						echo "<td><a href='modalGrupo_de_investigacion.php?idGrupo_de_investigacion=" . $currentPpaidi -> getGrupo_de_investigacion() -> getIdGrupo_de_investigacion() . "' data-toggle='modal' data-target='#modalPpaidi' >" . $currentPpaidi -> getGrupo_de_investigacion() -> getNombre() . " " . $currentPpaidi -> getGrupo_de_investigacion() -> getApellido() . " " . $currentPpaidi -> getGrupo_de_investigacion() -> getClasificacion() . " " . $currentPpaidi -> getGrupo_de_investigacion() -> getLider() . " " . $currentPpaidi -> getGrupo_de_investigacion() -> getArea() . " " . $currentPpaidi -> getGrupo_de_investigacion() -> getPagina_web() . "</a></td>";
+						echo "<td><a href='modalGrupo_de_investigacion.php?idGrupo_de_investigacion=" . $currentPpaidi -> getGrupo_de_investigacion() -> getIdGrupo_de_investigacion() . "' data-toggle='modal' data-target='#modalPpaidi' >" . $currentPpaidi -> getGrupo_de_investigacion() -> getNombre() . "</a></td>";
 						echo "<td class='text-right' nowrap>";
 						if($_SESSION['entity'] == 'Administrador' || $_SESSION['entity'] == 'Grupo_de_investigacion') {
 							echo "<a href='index.php?pid=" . base64_encode("ui/ppaidi/updatePpaidi.php") . "&idPpaidi=" . $currentPpaidi -> getIdPpaidi() . "'><span class='fas fa-edit' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='Editar Ppaidi' ></span></a> ";

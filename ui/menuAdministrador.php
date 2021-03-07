@@ -13,10 +13,10 @@ $administrador -> select();
 					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/administrador/insertAdministrador.php") ?>">Administrador</a>
 					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/usuario_ud/insertUsuario_ud.php") ?>">Usuario_ud</a>
 					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/grupo_de_investigacion/insertGrupo_de_investigacion.php") ?>">Grupo_de_investigacion</a>
-					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/pc/insertPc.php") ?>">Pc</a>
-					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/ppnc/insertPpnc.php") ?>">Ppnc</a>
-					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/ppaidi/insertPpaidi.php") ?>">Ppaidi</a>
-					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/ppfr/insertPpfr.php") ?>">Ppfr</a>
+					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/pc/insertPc.php") ?>">Perfil de colaboracion</a>
+					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/ppnc/insertPpnc.php") ?>">Perfil de productos resultado de actividades de generación de nuevo conocimiento</a>
+					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/ppaidi/insertPpaidi.php") ?>">Perfil de productos resultado de actividades de Desarrollo Tecnológico e Innovación</a>
+					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/ppfr/insertPpfr.php") ?>">Perfil de productos resultado de actividades relacionadas con la Formación del Recurso Humano en CTI</a>
 					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/productos/insertProductos.php") ?>">Productos</a>
 					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/cultura_investigativa/insertCultura_investigativa.php") ?>">Cultura_investigativa</a>
 					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/inversion/insertInversion.php") ?>">Inversion</a>
@@ -35,10 +35,10 @@ $administrador -> select();
 					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/administrador/selectAllAdministrador.php") ?>">Administrador</a>
 					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/usuario_ud/selectAllUsuario_ud.php") ?>">Usuario_ud</a>
 					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/grupo_de_investigacion/selectAllGrupo_de_investigacion.php") ?>">Grupo_de_investigacion</a>
-					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/pc/selectAllPc.php") ?>">Pc</a>
-					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/ppnc/selectAllPpnc.php") ?>">Ppnc</a>
-					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/ppaidi/selectAllPpaidi.php") ?>">Ppaidi</a>
-					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/ppfr/selectAllPpfr.php") ?>">Ppfr</a>
+					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/pc/selectAllPc.php") ?>">Perfil de colaboracion</a>
+					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/ppnc/selectAllPpnc.php") ?>">Perfil de productos resultado de actividades de generación de nuevo conocimiento</a>
+					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/ppaidi/selectAllPpaidi.php") ?>">Perfil de productos resultado de actividades de Desarrollo Tecnológico e Innovación</a>
+					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/ppfr/selectAllPpfr.php") ?>">Perfil de productos resultado de actividades relacionadas con la Formación del Recurso Humano en CTI</a>
 					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/productos/selectAllProductos.php") ?>">Productos</a>
 					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/cultura_investigativa/selectAllCultura_investigativa.php") ?>">Cultura_investigativa</a>
 					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/inversion/selectAllInversion.php") ?>">Inversion</a>
@@ -57,10 +57,10 @@ $administrador -> select();
 					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/administrador/searchAdministrador.php") ?>">Administrador</a>
 					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/usuario_ud/searchUsuario_ud.php") ?>">Usuario_ud</a>
 					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/grupo_de_investigacion/searchGrupo_de_investigacion.php") ?>">Grupo_de_investigacion</a>
-					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/pc/searchPc.php") ?>">Pc</a>
-					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/ppnc/searchPpnc.php") ?>">Ppnc</a>
-					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/ppaidi/searchPpaidi.php") ?>">Ppaidi</a>
-					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/ppfr/searchPpfr.php") ?>">Ppfr</a>
+					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/pc/searchPc.php") ?>">Perfil de colaboracion</a>
+					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/ppnc/searchPpnc.php") ?>">Perfil de productos resultado de actividades de generación de nuevo conocimiento</a>
+					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/ppaidi/searchPpaidi.php") ?>">Perfil de productos resultado de actividades de Desarrollo Tecnológico e Innovación</a>
+					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/ppfr/searchPpfr.php") ?>">Perfil de productos resultado de actividades relacionadas con la Formación del Recurso Humano en CTI</a>
 					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/productos/searchProductos.php") ?>">Productos</a>
 					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/cultura_investigativa/searchCultura_investigativa.php") ?>">Cultura_investigativa</a>
 					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/inversion/searchInversion.php") ?>">Inversion</a>

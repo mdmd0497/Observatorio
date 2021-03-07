@@ -6,10 +6,7 @@ $nombre="";
 if(isset($_POST['nombre'])){
 	$nombre=$_POST['nombre'];
 }
-$apellido="";
-if(isset($_POST['apellido'])){
-	$apellido=$_POST['apellido'];
-}
+
 $correo="";
 if(isset($_POST['correo'])){
 	$correo=$_POST['correo'];
@@ -31,7 +28,7 @@ if(isset($_POST['Pagina_web'])){
 	$Pagina_web=$_POST['Pagina_web'];
 }
 if(isset($_POST['update'])){
-	$updateGrupo_de_investigacion = new Grupo_de_investigacion($_SESSION['id'], $nombre, $apellido, $correo, "", "", $Clasificacion, $Lider, $Area, $Pagina_web, "1");
+	$updateGrupo_de_investigacion = new Grupo_de_investigacion($_SESSION['id'], $nombre, $correo, "", "", $Clasificacion, $Lider, $Area, $Pagina_web, "1");
 	$updateGrupo_de_investigacion -> update();
 	$updateGrupo_de_investigacion -> select();
 	$user_ip = getenv('REMOTE_ADDR');
@@ -50,7 +47,7 @@ if(isset($_POST['update'])){
 	} else if (preg_match('/Safari[\/\s](\d+\.\d+)/', $agent) ) {
 		$browser = "Safari";
 	}
-	$logGrupo_de_investigacion = new LogGrupo_de_investigacion("","Editar Profile Grupo_de_investigacion", "Nombre: " . $nombre . "; Apellido: " . $apellido . "; Correo: " . $correo . "; Clasificacion: " . $Clasificacion . "; Lider: " . $Lider . "; Area: " . $Area . "; Pagina_web: " . $Pagina_web, date("Y-m-d"), date("H:i:s"), $user_ip, PHP_OS, $browser, $_SESSION['id']);
+	$logGrupo_de_investigacion = new LogGrupo_de_investigacion("","Editar Profile Grupo_de_investigacion", "Nombre: " . $nombre . "; Correo: " . $correo . "; Clasificacion: " . $Clasificacion . "; Lider: " . $Lider . "; Area: " . $Area . "; Pagina_web: " . $Pagina_web, date("Y-m-d"), date("H:i:s"), $user_ip, PHP_OS, $browser, $_SESSION['id']);
 	$logGrupo_de_investigacion -> insert();
 	$processed=true;
 }
@@ -75,10 +72,6 @@ if(isset($_POST['update'])){
 						<div class="form-group">
 							<label>Nombre*</label>
 							<input type="text" class="form-control" name="nombre" value="<?php echo $updateGrupo_de_investigacion -> getNombre() ?>" required />
-						</div>
-						<div class="form-group">
-							<label>Apellido*</label>
-							<input type="text" class="form-control" name="apellido" value="<?php echo $updateGrupo_de_investigacion -> getApellido() ?>" required />
 						</div>
 						<div class="form-group">
 							<label>Correo*</label>

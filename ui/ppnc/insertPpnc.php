@@ -28,7 +28,7 @@ if(isset($_POST['insert'])){
 	$newPpnc -> insert();
 	$objGrupo_de_investigacion = new Grupo_de_investigacion($grupo_de_investigacion);
 	$objGrupo_de_investigacion -> select();
-	$nameGrupo_de_investigacion = $objGrupo_de_investigacion -> getNombre() . " " . $objGrupo_de_investigacion -> getApellido() . " " . $objGrupo_de_investigacion -> getClasificacion() . " " . $objGrupo_de_investigacion -> getLider() . " " . $objGrupo_de_investigacion -> getArea() . " " . $objGrupo_de_investigacion -> getPagina_web() ;
+	$nameGrupo_de_investigacion = $objGrupo_de_investigacion -> getNombre();
 	$user_ip = getenv('REMOTE_ADDR');
 	$agent = $_SERVER["HTTP_USER_AGENT"];
 	$browser = "-";
@@ -80,7 +80,6 @@ if(isset($_POST['insert'])){
 						<div class="form-group">
 							<label>Subtipo_de_producto</label>
 							<textarea id="subtipo_de_producto" name="subtipo_de_producto" ><?php echo $subtipo_de_producto ?></textarea>
-
 							<script>
 								$('#subtipo_de_producto').summernote({
 									tabsize: 2,
@@ -117,7 +116,7 @@ if(isset($_POST['insert'])){
 								if($currentGrupo_de_investigacion -> getIdGrupo_de_investigacion() == $grupo_de_investigacion){
 									echo " selected";
 								}
-								echo ">" . $currentGrupo_de_investigacion -> getNombre() . " " . $currentGrupo_de_investigacion -> getApellido() . " " . $currentGrupo_de_investigacion -> getClasificacion() . " " . $currentGrupo_de_investigacion -> getLider() . " " . $currentGrupo_de_investigacion -> getArea() . " " . $currentGrupo_de_investigacion -> getPagina_web() . "</option>";
+								echo ">" . $currentGrupo_de_investigacion -> getNombre() . "</option>";
 							}
 							?>
 						</select>

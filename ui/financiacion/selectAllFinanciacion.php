@@ -12,7 +12,7 @@ if(isset($_GET['action']) && $_GET['action']=="delete"){
 	$deleteFinanciacion = new Financiacion($_GET['idFinanciacion']);
 	$deleteFinanciacion -> select();
 	if($deleteFinanciacion -> delete()){
-		$nameGrupo_de_investigacion = $deleteFinanciacion -> getGrupo_de_investigacion() -> getNombre() . " " . $deleteFinanciacion -> getGrupo_de_investigacion() -> getApellido() . " " . $deleteFinanciacion -> getGrupo_de_investigacion() -> getClasificacion() . " " . $deleteFinanciacion -> getGrupo_de_investigacion() -> getLider() . " " . $deleteFinanciacion -> getGrupo_de_investigacion() -> getArea() . " " . $deleteFinanciacion -> getGrupo_de_investigacion() -> getPagina_web();
+		$nameGrupo_de_investigacion = $deleteFinanciacion -> getGrupo_de_investigacion() -> getNombre();
 		$user_ip = getenv('REMOTE_ADDR');
 		$agent = $_SERVER["HTTP_USER_AGENT"];
 		$browser = "-";
@@ -116,7 +116,7 @@ if(isset($_GET['action']) && $_GET['action']=="delete"){
 						echo "<tr><td>" . $counter . "</td>";
 						echo "<td>" . $currentFinanciacion -> getVariable() . "</td>";
 						echo "<td>" . $currentFinanciacion -> getCalificacion() . "</td>";
-						echo "<td><a href='modalGrupo_de_investigacion.php?idGrupo_de_investigacion=" . $currentFinanciacion -> getGrupo_de_investigacion() -> getIdGrupo_de_investigacion() . "' data-toggle='modal' data-target='#modalFinanciacion' >" . $currentFinanciacion -> getGrupo_de_investigacion() -> getNombre() . " " . $currentFinanciacion -> getGrupo_de_investigacion() -> getApellido() . " " . $currentFinanciacion -> getGrupo_de_investigacion() -> getClasificacion() . " " . $currentFinanciacion -> getGrupo_de_investigacion() -> getLider() . " " . $currentFinanciacion -> getGrupo_de_investigacion() -> getArea() . " " . $currentFinanciacion -> getGrupo_de_investigacion() -> getPagina_web() . "</a></td>";
+						echo "<td><a href='modalGrupo_de_investigacion.php?idGrupo_de_investigacion=" . $currentFinanciacion -> getGrupo_de_investigacion() -> getIdGrupo_de_investigacion() . "' data-toggle='modal' data-target='#modalFinanciacion' >" . $currentFinanciacion -> getGrupo_de_investigacion() -> getNombre() . "</a></td>";
 						echo "<td class='text-right' nowrap>";
 						if($_SESSION['entity'] == 'Administrador' || $_SESSION['entity'] == 'Grupo_de_investigacion') {
 							echo "<a href='index.php?pid=" . base64_encode("ui/financiacion/updateFinanciacion.php") . "&idFinanciacion=" . $currentFinanciacion -> getIdFinanciacion() . "'><span class='fas fa-edit' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='Editar Financiacion' ></span></a> ";

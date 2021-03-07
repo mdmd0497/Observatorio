@@ -12,7 +12,7 @@ if(isset($_GET['action']) && $_GET['action']=="delete"){
 	$deleteProductos = new Productos($_GET['idProductos']);
 	$deleteProductos -> select();
 	if($deleteProductos -> delete()){
-		$nameGrupo_de_investigacion = $deleteProductos -> getGrupo_de_investigacion() -> getNombre() . " " . $deleteProductos -> getGrupo_de_investigacion() -> getApellido() . " " . $deleteProductos -> getGrupo_de_investigacion() -> getClasificacion() . " " . $deleteProductos -> getGrupo_de_investigacion() -> getLider() . " " . $deleteProductos -> getGrupo_de_investigacion() -> getArea() . " " . $deleteProductos -> getGrupo_de_investigacion() -> getPagina_web();
+		$nameGrupo_de_investigacion = $deleteProductos -> getGrupo_de_investigacion() -> getNombre();
 		$user_ip = getenv('REMOTE_ADDR');
 		$agent = $_SERVER["HTTP_USER_AGENT"];
 		$browser = "-";
@@ -116,7 +116,7 @@ if(isset($_GET['action']) && $_GET['action']=="delete"){
 						echo "<tr><td>" . $counter . "</td>";
 						echo "<td>" . $currentProductos -> getVariable() . "</td>";
 						echo "<td>" . $currentProductos -> getCalificacion() . "</td>";
-						echo "<td><a href='modalGrupo_de_investigacion.php?idGrupo_de_investigacion=" . $currentProductos -> getGrupo_de_investigacion() -> getIdGrupo_de_investigacion() . "' data-toggle='modal' data-target='#modalProductos' >" . $currentProductos -> getGrupo_de_investigacion() -> getNombre() . " " . $currentProductos -> getGrupo_de_investigacion() -> getApellido() . " " . $currentProductos -> getGrupo_de_investigacion() -> getClasificacion() . " " . $currentProductos -> getGrupo_de_investigacion() -> getLider() . " " . $currentProductos -> getGrupo_de_investigacion() -> getArea() . " " . $currentProductos -> getGrupo_de_investigacion() -> getPagina_web() . "</a></td>";
+						echo "<td><a href='modalGrupo_de_investigacion.php?idGrupo_de_investigacion=" . $currentProductos -> getGrupo_de_investigacion() -> getIdGrupo_de_investigacion() . "' data-toggle='modal' data-target='#modalProductos' >" . $currentProductos -> getGrupo_de_investigacion() -> getNombre() . "</a></td>";
 						echo "<td class='text-right' nowrap>";
 						if($_SESSION['entity'] == 'Administrador' || $_SESSION['entity'] == 'Grupo_de_investigacion') {
 							echo "<a href='index.php?pid=" . base64_encode("ui/productos/updateProductos.php") . "&idProductos=" . $currentProductos -> getIdProductos() . "'><span class='fas fa-edit' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='Editar Productos' ></span></a> ";
