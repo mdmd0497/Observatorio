@@ -22,7 +22,7 @@
 			echo "<tr><td>" . $counter . "</td>";
 			echo "<td>" . str_ireplace($_GET['search'], "<mark>" . $_GET['search'] . "</mark>", $currentVigilancia_tecnologica -> getVariable()) . "</td>";
 			echo "<td>" . str_ireplace($_GET['search'], "<mark>" . $_GET['search'] . "</mark>", $currentVigilancia_tecnologica -> getCalificacion()) . "</td>";
-			echo "<td>" . $currentVigilancia_tecnologica -> getGrupo_de_investigacion() -> getNombre() . " " . $currentVigilancia_tecnologica -> getGrupo_de_investigacion() -> getApellido() . " " . $currentVigilancia_tecnologica -> getGrupo_de_investigacion() -> getClasificacion() . " " . $currentVigilancia_tecnologica -> getGrupo_de_investigacion() -> getLider() . " " . $currentVigilancia_tecnologica -> getGrupo_de_investigacion() -> getArea() . " " . $currentVigilancia_tecnologica -> getGrupo_de_investigacion() -> getPagina_web() . "</td>";
+			echo "<td>" . $currentVigilancia_tecnologica -> getGrupo_de_investigacion() -> getNombre() . "</td>";
 						echo "<td class='text-right' nowrap>";
 						if($_GET['entity'] == 'Administrador' || $_GET['entity'] == 'Grupo_de_investigacion') {
 							echo "<a href='index.php?pid=" . base64_encode("ui/vigilancia_tecnologica/updateVigilancia_tecnologica.php") . "&idVigilancia_tecnologica=" . $currentVigilancia_tecnologica -> getIdVigilancia_tecnologica() . "'><span class='fas fa-edit' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='Editar Vigilancia_tecnologica' ></span></a> ";

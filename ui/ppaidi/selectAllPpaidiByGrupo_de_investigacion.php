@@ -14,7 +14,7 @@ if(!empty($_GET['action']) && $_GET['action']=="delete"){
 	$deletePpaidi = new Ppaidi($_GET['idPpaidi']);
 	$deletePpaidi -> select();
 	if($deletePpaidi -> delete()){
-		$nameGrupo_de_investigacion = $deletePpaidi -> getGrupo_de_investigacion() -> getNombre() . " " . $deletePpaidi -> getGrupo_de_investigacion() -> getApellido() . " " . $deletePpaidi -> getGrupo_de_investigacion() -> getClasificacion() . " " . $deletePpaidi -> getGrupo_de_investigacion() -> getLider() . " " . $deletePpaidi -> getGrupo_de_investigacion() -> getArea() . " " . $deletePpaidi -> getGrupo_de_investigacion() -> getPagina_web();
+		$nameGrupo_de_investigacion = $deletePpaidi -> getGrupo_de_investigacion() -> getNombre();
 		$user_ip = getenv('REMOTE_ADDR');
 		$agent = $_SERVER["HTTP_USER_AGENT"];
 		$browser = "-";
@@ -51,7 +51,7 @@ if(!empty($_GET['action']) && $_GET['action']=="delete"){
 <div class="container-fluid">
 	<div class="card">
 		<div class="card-header">
-			<h4 class="card-title">Consultar Ppaidi de Grupo_de_investigacion: <em><?php echo $grupo_de_investigacion -> getNombre() . " " . $grupo_de_investigacion -> getApellido() . " " . $grupo_de_investigacion -> getClasificacion() . " " . $grupo_de_investigacion -> getLider() . " " . $grupo_de_investigacion -> getArea() . " " . $grupo_de_investigacion -> getPagina_web() ?></em></h4>
+			<h4 class="card-title">Consultar Ppaidi de Grupo_de_investigacion: <em><?php echo $grupo_de_investigacion -> getNombre()?></em></h4>
 		</div>
 		<div class="card-body">
 		<?php if(isset($_GET['action']) && $_GET['action']=="delete"){ ?>
@@ -135,7 +135,7 @@ if(!empty($_GET['action']) && $_GET['action']=="delete"){
 				</thead>
 				</tbody>
 					<?php
-					$ppaidi = new Ppaidi("", "", "", "", "", $_GET['idGrupo_de_investigacion']);
+					$ppaidi = new Ppaidi("", "", "", "", "", $_GET['idGrupo_de_investigacion']);// pa tener en cuenta
 					if($order!="" && $dir!="") {
 						$ppaidis = $ppaidi -> selectAllByGrupo_de_investigacionOrder($order, $dir);
 					} else {
@@ -148,7 +148,7 @@ if(!empty($_GET['action']) && $_GET['action']=="delete"){
 						echo "<td>" . $currentPpaidi -> getAbreviatura() . "</td>";
 						echo "<td>" . $currentPpaidi -> getValor_maximo() . "</td>";
 						echo "<td>" . $currentPpaidi -> getValor_indicador() . "</td>";
-						echo "<td><a href='modalGrupo_de_investigacion.php?idGrupo_de_investigacion=" . $currentPpaidi -> getGrupo_de_investigacion() -> getIdGrupo_de_investigacion() . "' data-toggle='modal' data-target='#modalPpaidi' >" . $currentPpaidi -> getGrupo_de_investigacion() -> getNombre() . " " . $currentPpaidi -> getGrupo_de_investigacion() -> getApellido() . " " . $currentPpaidi -> getGrupo_de_investigacion() -> getClasificacion() . " " . $currentPpaidi -> getGrupo_de_investigacion() -> getLider() . " " . $currentPpaidi -> getGrupo_de_investigacion() -> getArea() . " " . $currentPpaidi -> getGrupo_de_investigacion() -> getPagina_web() . "</a></td>";
+						echo "<td><a href='modalGrupo_de_investigacion.php?idGrupo_de_investigacion=" . $currentPpaidi -> getGrupo_de_investigacion() -> getIdGrupo_de_investigacion() . "' data-toggle='modal' data-target='#modalPpaidi' >" . $currentPpaidi -> getGrupo_de_investigacion() -> getNombre() . "</a></td>";
 						echo "<td class='text-right' nowrap>";
 						if($_SESSION['entity'] == 'Administrador' || $_SESSION['entity'] == 'Grupo_de_investigacion') {
 							echo "<a href='index.php?pid=" . base64_encode("ui/ppaidi/updatePpaidi.php") . "&idPpaidi=" . $currentPpaidi -> getIdPpaidi() . "'><span class='fas fa-edit' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='Editar Ppaidi' ></span></a> ";

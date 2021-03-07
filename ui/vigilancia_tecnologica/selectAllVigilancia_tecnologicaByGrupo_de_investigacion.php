@@ -14,7 +14,7 @@ if(!empty($_GET['action']) && $_GET['action']=="delete"){
 	$deleteVigilancia_tecnologica = new Vigilancia_tecnologica($_GET['idVigilancia_tecnologica']);
 	$deleteVigilancia_tecnologica -> select();
 	if($deleteVigilancia_tecnologica -> delete()){
-		$nameGrupo_de_investigacion = $deleteVigilancia_tecnologica -> getGrupo_de_investigacion() -> getNombre() . " " . $deleteVigilancia_tecnologica -> getGrupo_de_investigacion() -> getApellido() . " " . $deleteVigilancia_tecnologica -> getGrupo_de_investigacion() -> getClasificacion() . " " . $deleteVigilancia_tecnologica -> getGrupo_de_investigacion() -> getLider() . " " . $deleteVigilancia_tecnologica -> getGrupo_de_investigacion() -> getArea() . " " . $deleteVigilancia_tecnologica -> getGrupo_de_investigacion() -> getPagina_web();
+		$nameGrupo_de_investigacion = $deleteVigilancia_tecnologica -> getGrupo_de_investigacion() -> getNombre();
 		$user_ip = getenv('REMOTE_ADDR');
 		$agent = $_SERVER["HTTP_USER_AGENT"];
 		$browser = "-";
@@ -51,7 +51,7 @@ if(!empty($_GET['action']) && $_GET['action']=="delete"){
 <div class="container-fluid">
 	<div class="card">
 		<div class="card-header">
-			<h4 class="card-title">Consultar Vigilancia_tecnologica de Grupo_de_investigacion: <em><?php echo $grupo_de_investigacion -> getNombre() . " " . $grupo_de_investigacion -> getApellido() . " " . $grupo_de_investigacion -> getClasificacion() . " " . $grupo_de_investigacion -> getLider() . " " . $grupo_de_investigacion -> getArea() . " " . $grupo_de_investigacion -> getPagina_web() ?></em></h4>
+			<h4 class="card-title">Consultar Vigilancia_tecnologica de Grupo_de_investigacion: <em><?php echo $grupo_de_investigacion -> getNombre() ?></em></h4>
 		</div>
 		<div class="card-body">
 		<?php if(isset($_GET['action']) && $_GET['action']=="delete"){ ?>
@@ -118,7 +118,7 @@ if(!empty($_GET['action']) && $_GET['action']=="delete"){
 						echo "<tr><td>" . $counter . "</td>";
 						echo "<td>" . $currentVigilancia_tecnologica -> getVariable() . "</td>";
 						echo "<td>" . $currentVigilancia_tecnologica -> getCalificacion() . "</td>";
-						echo "<td><a href='modalGrupo_de_investigacion.php?idGrupo_de_investigacion=" . $currentVigilancia_tecnologica -> getGrupo_de_investigacion() -> getIdGrupo_de_investigacion() . "' data-toggle='modal' data-target='#modalVigilancia_tecnologica' >" . $currentVigilancia_tecnologica -> getGrupo_de_investigacion() -> getNombre() . " " . $currentVigilancia_tecnologica -> getGrupo_de_investigacion() -> getApellido() . " " . $currentVigilancia_tecnologica -> getGrupo_de_investigacion() -> getClasificacion() . " " . $currentVigilancia_tecnologica -> getGrupo_de_investigacion() -> getLider() . " " . $currentVigilancia_tecnologica -> getGrupo_de_investigacion() -> getArea() . " " . $currentVigilancia_tecnologica -> getGrupo_de_investigacion() -> getPagina_web() . "</a></td>";
+						echo "<td><a href='modalGrupo_de_investigacion.php?idGrupo_de_investigacion=" . $currentVigilancia_tecnologica -> getGrupo_de_investigacion() -> getIdGrupo_de_investigacion() . "' data-toggle='modal' data-target='#modalVigilancia_tecnologica' >" . $currentVigilancia_tecnologica -> getGrupo_de_investigacion() -> getNombre(). "</a></td>";
 						echo "<td class='text-right' nowrap>";
 						if($_SESSION['entity'] == 'Administrador' || $_SESSION['entity'] == 'Grupo_de_investigacion') {
 							echo "<a href='index.php?pid=" . base64_encode("ui/vigilancia_tecnologica/updateVigilancia_tecnologica.php") . "&idVigilancia_tecnologica=" . $currentVigilancia_tecnologica -> getIdVigilancia_tecnologica() . "'><span class='fas fa-edit' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='Editar Vigilancia_tecnologica' ></span></a> ";

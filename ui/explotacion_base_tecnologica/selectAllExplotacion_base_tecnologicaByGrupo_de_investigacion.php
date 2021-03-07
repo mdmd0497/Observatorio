@@ -14,7 +14,7 @@ if(!empty($_GET['action']) && $_GET['action']=="delete"){
 	$deleteExplotacion_base_tecnologica = new Explotacion_base_tecnologica($_GET['idExplotacion_base_tecnologica']);
 	$deleteExplotacion_base_tecnologica -> select();
 	if($deleteExplotacion_base_tecnologica -> delete()){
-		$nameGrupo_de_investigacion = $deleteExplotacion_base_tecnologica -> getGrupo_de_investigacion() -> getNombre() . " " . $deleteExplotacion_base_tecnologica -> getGrupo_de_investigacion() -> getApellido() . " " . $deleteExplotacion_base_tecnologica -> getGrupo_de_investigacion() -> getClasificacion() . " " . $deleteExplotacion_base_tecnologica -> getGrupo_de_investigacion() -> getLider() . " " . $deleteExplotacion_base_tecnologica -> getGrupo_de_investigacion() -> getArea() . " " . $deleteExplotacion_base_tecnologica -> getGrupo_de_investigacion() -> getPagina_web();
+		$nameGrupo_de_investigacion = $deleteExplotacion_base_tecnologica -> getGrupo_de_investigacion() -> getNombre();
 		$user_ip = getenv('REMOTE_ADDR');
 		$agent = $_SERVER["HTTP_USER_AGENT"];
 		$browser = "-";
@@ -51,7 +51,7 @@ if(!empty($_GET['action']) && $_GET['action']=="delete"){
 <div class="container-fluid">
 	<div class="card">
 		<div class="card-header">
-			<h4 class="card-title">Consultar Explotacion_base_tecnologica de Grupo_de_investigacion: <em><?php echo $grupo_de_investigacion -> getNombre() . " " . $grupo_de_investigacion -> getApellido() . " " . $grupo_de_investigacion -> getClasificacion() . " " . $grupo_de_investigacion -> getLider() . " " . $grupo_de_investigacion -> getArea() . " " . $grupo_de_investigacion -> getPagina_web() ?></em></h4>
+			<h4 class="card-title">Consultar Explotacion_base_tecnologica de Grupo_de_investigacion: <em><?php echo $grupo_de_investigacion -> getNombre() ?></em></h4>
 		</div>
 		<div class="card-body">
 		<?php if(isset($_GET['action']) && $_GET['action']=="delete"){ ?>
@@ -118,7 +118,7 @@ if(!empty($_GET['action']) && $_GET['action']=="delete"){
 						echo "<tr><td>" . $counter . "</td>";
 						echo "<td>" . $currentExplotacion_base_tecnologica -> getVariable() . "</td>";
 						echo "<td>" . $currentExplotacion_base_tecnologica -> getCalificacion() . "</td>";
-						echo "<td><a href='modalGrupo_de_investigacion.php?idGrupo_de_investigacion=" . $currentExplotacion_base_tecnologica -> getGrupo_de_investigacion() -> getIdGrupo_de_investigacion() . "' data-toggle='modal' data-target='#modalExplotacion_base_tecnologica' >" . $currentExplotacion_base_tecnologica -> getGrupo_de_investigacion() -> getNombre() . " " . $currentExplotacion_base_tecnologica -> getGrupo_de_investigacion() -> getApellido() . " " . $currentExplotacion_base_tecnologica -> getGrupo_de_investigacion() -> getClasificacion() . " " . $currentExplotacion_base_tecnologica -> getGrupo_de_investigacion() -> getLider() . " " . $currentExplotacion_base_tecnologica -> getGrupo_de_investigacion() -> getArea() . " " . $currentExplotacion_base_tecnologica -> getGrupo_de_investigacion() -> getPagina_web() . "</a></td>";
+						echo "<td><a href='modalGrupo_de_investigacion.php?idGrupo_de_investigacion=" . $currentExplotacion_base_tecnologica -> getGrupo_de_investigacion() -> getIdGrupo_de_investigacion() . "' data-toggle='modal' data-target='#modalExplotacion_base_tecnologica' >" . $currentExplotacion_base_tecnologica -> getGrupo_de_investigacion() -> getNombre() . "</a></td>";
 						echo "<td class='text-right' nowrap>";
 						if($_SESSION['entity'] == 'Administrador' || $_SESSION['entity'] == 'Grupo_de_investigacion') {
 							echo "<a href='index.php?pid=" . base64_encode("ui/explotacion_base_tecnologica/updateExplotacion_base_tecnologica.php") . "&idExplotacion_base_tecnologica=" . $currentExplotacion_base_tecnologica -> getIdExplotacion_base_tecnologica() . "'><span class='fas fa-edit' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='Editar Explotacion_base_tecnologica' ></span></a> ";

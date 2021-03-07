@@ -22,7 +22,7 @@
 			echo "<tr><td>" . $counter . "</td>";
 			echo "<td>" . str_ireplace($_GET['search'], "<mark>" . $_GET['search'] . "</mark>", $currentGestion_del_conocimiento -> getVariable()) . "</td>";
 			echo "<td>" . str_ireplace($_GET['search'], "<mark>" . $_GET['search'] . "</mark>", $currentGestion_del_conocimiento -> getCalificacion()) . "</td>";
-			echo "<td>" . $currentGestion_del_conocimiento -> getGrupo_de_investigacion() -> getNombre() . " " . $currentGestion_del_conocimiento -> getGrupo_de_investigacion() -> getApellido() . " " . $currentGestion_del_conocimiento -> getGrupo_de_investigacion() -> getClasificacion() . " " . $currentGestion_del_conocimiento -> getGrupo_de_investigacion() -> getLider() . " " . $currentGestion_del_conocimiento -> getGrupo_de_investigacion() -> getArea() . " " . $currentGestion_del_conocimiento -> getGrupo_de_investigacion() -> getPagina_web() . "</td>";
+			echo "<td>" . $currentGestion_del_conocimiento -> getGrupo_de_investigacion() -> getNombre() . "</td>";
 						echo "<td class='text-right' nowrap>";
 						if($_GET['entity'] == 'Administrador' || $_GET['entity'] == 'Grupo_de_investigacion') {
 							echo "<a href='index.php?pid=" . base64_encode("ui/gestion_del_conocimiento/updateGestion_del_conocimiento.php") . "&idGestion_del_conocimiento=" . $currentGestion_del_conocimiento -> getIdGestion_del_conocimiento() . "'><span class='fas fa-edit' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='Editar Gestion_del_conocimiento' ></span></a> ";

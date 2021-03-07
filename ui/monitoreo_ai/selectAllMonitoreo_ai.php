@@ -12,7 +12,7 @@ if(isset($_GET['action']) && $_GET['action']=="delete"){
 	$deleteMonitoreo_ai = new Monitoreo_ai($_GET['idMonitoreo_ai']);
 	$deleteMonitoreo_ai -> select();
 	if($deleteMonitoreo_ai -> delete()){
-		$nameGrupo_de_investigacion = $deleteMonitoreo_ai -> getGrupo_de_investigacion() -> getNombre() . " " . $deleteMonitoreo_ai -> getGrupo_de_investigacion() -> getApellido() . " " . $deleteMonitoreo_ai -> getGrupo_de_investigacion() -> getClasificacion() . " " . $deleteMonitoreo_ai -> getGrupo_de_investigacion() -> getLider() . " " . $deleteMonitoreo_ai -> getGrupo_de_investigacion() -> getArea() . " " . $deleteMonitoreo_ai -> getGrupo_de_investigacion() -> getPagina_web();
+		$nameGrupo_de_investigacion = $deleteMonitoreo_ai -> getGrupo_de_investigacion() -> getNombre();
 		$user_ip = getenv('REMOTE_ADDR');
 		$agent = $_SERVER["HTTP_USER_AGENT"];
 		$browser = "-";
@@ -116,7 +116,7 @@ if(isset($_GET['action']) && $_GET['action']=="delete"){
 						echo "<tr><td>" . $counter . "</td>";
 						echo "<td>" . $currentMonitoreo_ai -> getVariable() . "</td>";
 						echo "<td>" . $currentMonitoreo_ai -> getCalificacion() . "</td>";
-						echo "<td><a href='modalGrupo_de_investigacion.php?idGrupo_de_investigacion=" . $currentMonitoreo_ai -> getGrupo_de_investigacion() -> getIdGrupo_de_investigacion() . "' data-toggle='modal' data-target='#modalMonitoreo_ai' >" . $currentMonitoreo_ai -> getGrupo_de_investigacion() -> getNombre() . " " . $currentMonitoreo_ai -> getGrupo_de_investigacion() -> getApellido() . " " . $currentMonitoreo_ai -> getGrupo_de_investigacion() -> getClasificacion() . " " . $currentMonitoreo_ai -> getGrupo_de_investigacion() -> getLider() . " " . $currentMonitoreo_ai -> getGrupo_de_investigacion() -> getArea() . " " . $currentMonitoreo_ai -> getGrupo_de_investigacion() -> getPagina_web() . "</a></td>";
+						echo "<td><a href='modalGrupo_de_investigacion.php?idGrupo_de_investigacion=" . $currentMonitoreo_ai -> getGrupo_de_investigacion() -> getIdGrupo_de_investigacion() . "' data-toggle='modal' data-target='#modalMonitoreo_ai' >" . $currentMonitoreo_ai -> getGrupo_de_investigacion() -> getNombre() . "</a></td>";
 						echo "<td class='text-right' nowrap>";
 						if($_SESSION['entity'] == 'Administrador' || $_SESSION['entity'] == 'Grupo_de_investigacion') {
 							echo "<a href='index.php?pid=" . base64_encode("ui/monitoreo_ai/updateMonitoreo_ai.php") . "&idMonitoreo_ai=" . $currentMonitoreo_ai -> getIdMonitoreo_ai() . "'><span class='fas fa-edit' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='Editar Monitoreo_ai' ></span></a> ";

@@ -14,7 +14,7 @@ if(!empty($_GET['action']) && $_GET['action']=="delete"){
 	$deletePc = new Pc($_GET['idPc']);
 	$deletePc -> select();
 	if($deletePc -> delete()){
-		$nameGrupo_de_investigacion = $deletePc -> getGrupo_de_investigacion() -> getNombre() . " " . $deletePc -> getGrupo_de_investigacion() -> getApellido() . " " . $deletePc -> getGrupo_de_investigacion() -> getClasificacion() . " " . $deletePc -> getGrupo_de_investigacion() -> getLider() . " " . $deletePc -> getGrupo_de_investigacion() -> getArea() . " " . $deletePc -> getGrupo_de_investigacion() -> getPagina_web();
+		$nameGrupo_de_investigacion = $deletePc -> getGrupo_de_investigacion() -> getNombre() . " " . $deletePc -> getGrupo_de_investigacion() -> getClasificacion() . " " . $deletePc -> getGrupo_de_investigacion() -> getLider() . " " . $deletePc -> getGrupo_de_investigacion() -> getArea() . " " . $deletePc -> getGrupo_de_investigacion() -> getPagina_web();
 		$user_ip = getenv('REMOTE_ADDR');
 		$agent = $_SERVER["HTTP_USER_AGENT"];
 		$browser = "-";
@@ -51,7 +51,7 @@ if(!empty($_GET['action']) && $_GET['action']=="delete"){
 <div class="container-fluid">
 	<div class="card">
 		<div class="card-header">
-			<h4 class="card-title">Consultar Pc de Grupo_de_investigacion: <em><?php echo $grupo_de_investigacion -> getNombre() . " " . $grupo_de_investigacion -> getApellido() . " " . $grupo_de_investigacion -> getClasificacion() . " " . $grupo_de_investigacion -> getLider() . " " . $grupo_de_investigacion -> getArea() . " " . $grupo_de_investigacion -> getPagina_web() ?></em></h4>
+			<h4 class="card-title">Consultar PERFIL DE COLABORACION de Grupo_de_investigacion: <em><?php echo $grupo_de_investigacion -> getNombre()?></em></h4>
 		</div>
 		<div class="card-body">
 		<?php if(isset($_GET['action']) && $_GET['action']=="delete"){ ?>
@@ -135,7 +135,7 @@ if(!empty($_GET['action']) && $_GET['action']=="delete"){
 				</thead>
 				</tbody>
 					<?php
-					$pc = new Pc("", "", "", "", "", $_GET['idGrupo_de_investigacion']);
+					$pc = new Pc("", "", "", "", "","","","","", $_GET['idGrupo_de_investigacion']);
 					if($order!="" && $dir!="") {
 						$pcs = $pc -> selectAllByGrupo_de_investigacionOrder($order, $dir);
 					} else {
@@ -148,7 +148,7 @@ if(!empty($_GET['action']) && $_GET['action']=="delete"){
 						echo "<td>" . $currentPc -> getAbreviatura() . "</td>";
 						echo "<td>" . $currentPc -> getValor_maximo() . "</td>";
 						echo "<td>" . $currentPc -> getValor_indicador() . "</td>";
-						echo "<td><a href='modalGrupo_de_investigacion.php?idGrupo_de_investigacion=" . $currentPc -> getGrupo_de_investigacion() -> getIdGrupo_de_investigacion() . "' data-toggle='modal' data-target='#modalPc' >" . $currentPc -> getGrupo_de_investigacion() -> getNombre() . " " . $currentPc -> getGrupo_de_investigacion() -> getApellido() . " " . $currentPc -> getGrupo_de_investigacion() -> getClasificacion() . " " . $currentPc -> getGrupo_de_investigacion() -> getLider() . " " . $currentPc -> getGrupo_de_investigacion() -> getArea() . " " . $currentPc -> getGrupo_de_investigacion() -> getPagina_web() . "</a></td>";
+						echo "<td><a href='modalGrupo_de_investigacion.php?idGrupo_de_investigacion=" . $currentPc -> getGrupo_de_investigacion() -> getIdGrupo_de_investigacion() . "' data-toggle='modal' data-target='#modalPc' >" . $currentPc -> getGrupo_de_investigacion() -> getNombre() ."</a></td>";
 						echo "<td class='text-right' nowrap>";
 						if($_SESSION['entity'] == 'Administrador' || $_SESSION['entity'] == 'Grupo_de_investigacion') {
 							echo "<a href='index.php?pid=" . base64_encode("ui/pc/updatePc.php") . "&idPc=" . $currentPc -> getIdPc() . "'><span class='fas fa-edit' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='Editar Pc' ></span></a> ";

@@ -5,7 +5,6 @@ require_once ("persistence/Connection.php");
 class Grupo_de_investigacion {
 	private $idGrupo_de_investigacion;
 	private $nombre;
-	private $apellido;
 	private $correo;
 	private $clave;
 	private $foto;
@@ -33,13 +32,6 @@ class Grupo_de_investigacion {
 		$this -> nombre = $pNombre;
 	}
 
-	function getApellido() {
-		return $this -> apellido;
-	}
-
-	function setApellido($pApellido) {
-		$this -> apellido = $pApellido;
-	}
 
 	function getCorreo() {
 		return $this -> correo;
@@ -105,10 +97,9 @@ class Grupo_de_investigacion {
 		$this -> state = $pState;
 	}
 
-	function Grupo_de_investigacion($pIdGrupo_de_investigacion = "", $pNombre = "", $pApellido = "", $pCorreo = "", $pClave = "", $pFoto = "", $pClasificacion = "", $pLider = "", $pArea = "", $pPagina_web = "", $pState = ""){
+	function Grupo_de_investigacion($pIdGrupo_de_investigacion = "", $pNombre = "", $pCorreo = "", $pClave = "", $pFoto = "", $pClasificacion = "", $pLider = "", $pArea = "", $pPagina_web = "", $pState = ""){
 		$this -> idGrupo_de_investigacion = $pIdGrupo_de_investigacion;
 		$this -> nombre = $pNombre;
-		$this -> apellido = $pApellido;
 		$this -> correo = $pCorreo;
 		$this -> clave = $pClave;
 		$this -> foto = $pFoto;
@@ -117,7 +108,7 @@ class Grupo_de_investigacion {
 		$this -> Area = $pArea;
 		$this -> Pagina_web = $pPagina_web;
 		$this -> state = $pState;
-		$this -> grupo_de_investigacionDAO = new Grupo_de_investigacionDAO($this -> idGrupo_de_investigacion, $this -> nombre, $this -> apellido, $this -> correo, $this -> clave, $this -> foto, $this -> Clasificacion, $this -> Lider, $this -> Area, $this -> Pagina_web, $this -> state);
+		$this -> grupo_de_investigacionDAO = new Grupo_de_investigacionDAO($this -> idGrupo_de_investigacion, $this -> nombre, $this -> correo, $this -> clave, $this -> foto, $this -> Clasificacion, $this -> Lider, $this -> Area, $this -> Pagina_web, $this -> state);
 		$this -> connection = new Connection();
 	}
 
@@ -128,15 +119,14 @@ class Grupo_de_investigacion {
 			$result = $this -> connection -> fetchRow();
 			$this -> idGrupo_de_investigacion = $result[0];
 			$this -> nombre = $result[1];
-			$this -> apellido = $result[2];
-			$this -> correo = $result[3];
-			$this -> clave = $result[4];
-			$this -> foto = $result[5];
-			$this -> Clasificacion = $result[6];
-			$this -> Lider = $result[7];
-			$this -> Area = $result[8];
-			$this -> Pagina_web = $result[9];
-			$this -> state = $result[10];
+			$this -> correo = $result[2];
+			$this -> clave = $result[3];
+			$this -> foto = $result[4];
+			$this -> Clasificacion = $result[5];
+			$this -> Lider = $result[6];
+			$this -> Area = $result[7];
+			$this -> Pagina_web = $result[8];
+			$this -> state = $result[9];
 			$this -> connection -> close();
 			return true;
 		}else{
@@ -194,15 +184,14 @@ class Grupo_de_investigacion {
 		$this -> connection -> close();
 		$this -> idGrupo_de_investigacion = $result[0];
 		$this -> nombre = $result[1];
-		$this -> apellido = $result[2];
-		$this -> correo = $result[3];
-		$this -> clave = $result[4];
-		$this -> foto = $result[5];
-		$this -> Clasificacion = $result[6];
-		$this -> Lider = $result[7];
-		$this -> Area = $result[8];
-		$this -> Pagina_web = $result[9];
-		$this -> state = $result[10];
+		$this -> correo = $result[2];
+		$this -> clave = $result[3];
+		$this -> foto = $result[4];
+		$this -> Clasificacion = $result[5];
+		$this -> Lider = $result[6];
+		$this -> Area = $result[7];
+		$this -> Pagina_web = $result[8];
+		$this -> state = $result[9];
 	}
 
 	function selectAll(){
@@ -210,7 +199,7 @@ class Grupo_de_investigacion {
 		$this -> connection -> run($this -> grupo_de_investigacionDAO -> selectAll());
 		$grupo_de_investigacions = array();
 		while ($result = $this -> connection -> fetchRow()){
-			array_push($grupo_de_investigacions, new Grupo_de_investigacion($result[0], $result[1], $result[2], $result[3], $result[4], $result[5], $result[6], $result[7], $result[8], $result[9], $result[10]));
+			array_push($grupo_de_investigacions, new Grupo_de_investigacion($result[0], $result[1], $result[2], $result[3], $result[4], $result[5], $result[6], $result[7], $result[8], $result[9]));
 		}
 		$this -> connection -> close();
 		return $grupo_de_investigacions;
@@ -221,7 +210,7 @@ class Grupo_de_investigacion {
 		$this -> connection -> run($this -> grupo_de_investigacionDAO -> selectAllOrder($order, $dir));
 		$grupo_de_investigacions = array();
 		while ($result = $this -> connection -> fetchRow()){
-			array_push($grupo_de_investigacions, new Grupo_de_investigacion($result[0], $result[1], $result[2], $result[3], $result[4], $result[5], $result[6], $result[7], $result[8], $result[9], $result[10]));
+			array_push($grupo_de_investigacions, new Grupo_de_investigacion($result[0], $result[1], $result[2], $result[3], $result[4], $result[5], $result[6], $result[7], $result[8], $result[9]));
 		}
 		$this -> connection -> close();
 		return $grupo_de_investigacions;
@@ -232,7 +221,7 @@ class Grupo_de_investigacion {
 		$this -> connection -> run($this -> grupo_de_investigacionDAO -> search($search));
 		$grupo_de_investigacions = array();
 		while ($result = $this -> connection -> fetchRow()){
-			array_push($grupo_de_investigacions, new Grupo_de_investigacion($result[0], $result[1], $result[2], $result[3], $result[4], $result[5], $result[6], $result[7], $result[8], $result[9], $result[10]));
+			array_push($grupo_de_investigacions, new Grupo_de_investigacion($result[0], $result[1], $result[2], $result[3], $result[4], $result[5], $result[6], $result[7], $result[8], $result[9]));
 		}
 		$this -> connection -> close();
 		return $grupo_de_investigacions;

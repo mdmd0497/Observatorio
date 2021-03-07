@@ -29,7 +29,7 @@ if(isset($_POST['update'])){
 	$updatePc -> select();
 	$objGrupo_de_investigacion = new Grupo_de_investigacion($grupo_de_investigacion);
 	$objGrupo_de_investigacion -> select();
-	$nameGrupo_de_investigacion = $objGrupo_de_investigacion -> getNombre() . " " . $objGrupo_de_investigacion -> getApellido() . " " . $objGrupo_de_investigacion -> getClasificacion() . " " . $objGrupo_de_investigacion -> getLider() . " " . $objGrupo_de_investigacion -> getArea() . " " . $objGrupo_de_investigacion -> getPagina_web() ;
+	$nameGrupo_de_investigacion = $objGrupo_de_investigacion -> getNombre() . " " . $objGrupo_de_investigacion -> getClasificacion() . " " . $objGrupo_de_investigacion -> getLider() . " " . $objGrupo_de_investigacion -> getArea() . " " . $objGrupo_de_investigacion -> getPagina_web() ;
 	$user_ip = getenv('REMOTE_ADDR');
 	$agent = $_SERVER["HTTP_USER_AGENT"];
 	$browser = "-";
@@ -67,7 +67,7 @@ if(isset($_POST['update'])){
 		<div class="col-md-8">
 			<div class="card">
 				<div class="card-header">
-					<h4 class="card-title">Editar Pc</h4>
+					<h4 class="card-title">Editar PERFIL DE COLABORACION</h4>
 				</div>
 				<div class="card-body">
 					<?php if($processed){ ?>
@@ -117,7 +117,7 @@ if(isset($_POST['update'])){
 								if($currentGrupo_de_investigacion -> getIdGrupo_de_investigacion() == $updatePc -> getGrupo_de_investigacion() -> getIdGrupo_de_investigacion()){
 									echo " selected";
 								}
-								echo ">" . $currentGrupo_de_investigacion -> getNombre() . " " . $currentGrupo_de_investigacion -> getApellido() . " " . $currentGrupo_de_investigacion -> getClasificacion() . " " . $currentGrupo_de_investigacion -> getLider() . " " . $currentGrupo_de_investigacion -> getArea() . " " . $currentGrupo_de_investigacion -> getPagina_web() . "</option>";
+								echo ">" . $currentGrupo_de_investigacion -> getNombre() . " " . $currentGrupo_de_investigacion -> getClasificacion() . " " . $currentGrupo_de_investigacion -> getLider() . " " . $currentGrupo_de_investigacion -> getArea() . " " . $currentGrupo_de_investigacion -> getPagina_web() . "</option>";
 							}
 							?>
 						</select>

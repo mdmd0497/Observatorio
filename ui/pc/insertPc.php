@@ -39,18 +39,19 @@ if(isset($_POST['grupo_de_investigacion'])){
 if(isset($_GET['idGrupo_de_investigacion'])){
 	$grupo_de_investigacion=$_GET['idGrupo_de_investigacion'];
 }
+
 if(isset($_POST['insert'])){
     //cargamos el archivo al servidor con el mismo nombre
     //solo le agregue el sufijo bak_
     $archivo = $_FILES['excel']['name'];
     $tipo = $_FILES['excel']['type'];
     $destino = "bak_" . $archivo;
-//    if (copy($_FILES['excel']['tmp_name'], $destino)){
-//        echo "Archivo Cargado Con Éxito";
-//    }
-//    else{
-//        echo "Error Al Cargar el Archivo";
-//    }
+    if (copy($_FILES['excel']['tmp_name'], $destino)){
+        echo "Archivo Cargado Con Éxito";
+    }
+    else{
+        echo "Error Al Cargar el Archivo";
+    }
     if (file_exists("bak_" . $archivo)) {
         /** Clases necesarias */
         require_once('Classes/PHPExcel.php');
@@ -69,6 +70,9 @@ if(isset($_POST['insert'])){
         for ($i = 1; $i <= 2; $i++) {
             $_DATOS_EXCEL[$i]['maximo'] = $objPHPExcel->getActiveSheet()->getCell('A' . $i)->getCalculatedValue();
             $_DATOS_EXCEL[$i]['valor'] = $objPHPExcel->getActiveSheet()->getCell('B' . $i)->getCalculatedValue();
+
+            echo $_DATOS_EXCEL[$i]['maximo'];
+            echo $_DATOS_EXCEL[$i]['valor'];
         }
 
     }
@@ -88,7 +92,7 @@ if(isset($_POST['insert'])){
             }
         }elseif ($campo == 2){
             foreach ($valor as $campo2 => $valor2){
-                $valor_maximo2 = $_DATOS_EXCEL[$campo]['maximo'] ;
+                $valor_maximo2 = $_DATOS_EXCEL[$campo]['maximo'];
                 $valor_indicador2 = $_DATOS_EXCEL[$campo]['valor'];
             }
         }
@@ -102,7 +106,7 @@ if(isset($_POST['insert'])){
     $newPc -> insert();
     $objGrupo_de_investigacion = new Grupo_de_investigacion($grupo_de_investigacion);
     $objGrupo_de_investigacion -> select();
-    $nameGrupo_de_investigacion = $objGrupo_de_investigacion -> getNombre() . " " . $objGrupo_de_investigacion -> getApellido() . " " . $objGrupo_de_investigacion -> getClasificacion() . " " . $objGrupo_de_investigacion -> getLider() . " " . $objGrupo_de_investigacion -> getArea() . " " . $objGrupo_de_investigacion -> getPagina_web() ;
+    $nameGrupo_de_investigacion = $objGrupo_de_investigacion -> getNombre() . " " . $objGrupo_de_investigacion -> getClasificacion() . " " . $objGrupo_de_investigacion -> getLider() . " " . $objGrupo_de_investigacion -> getArea() . " " . $objGrupo_de_investigacion -> getPagina_web() ;
     $user_ip = getenv('REMOTE_ADDR');
     $agent = $_SERVER["HTTP_USER_AGENT"];
     $browser = "-";
@@ -140,7 +144,7 @@ if(isset($_POST['insert'])){
 		<div class="col-md-8">
 			<div class="card">
 				<div class="card-header">
-					<h4 class="card-title">Crear Pc</h4>
+					<h4 class="card-title">Crear  PERFIL DE COLABORACION</h4>
 				</div>
 				<div class="card-body">
 					<?php if($processed){ ?>
@@ -184,7 +188,7 @@ if(isset($_POST['insert'])){
 
 
 					<div class="form-group">
-						<label>Grupo_de_investigacion*</label>
+						<label>Grupo_de_investigacion</label>
 						<select class="form-control" name="grupo_de_investigacion">
 							<?php
 							$objGrupo_de_investigacion = new Grupo_de_investigacion();
@@ -194,7 +198,7 @@ if(isset($_POST['insert'])){
 								if($currentGrupo_de_investigacion -> getIdGrupo_de_investigacion() == $grupo_de_investigacion){
 									echo " selected";
 								}
-								echo ">" . $currentGrupo_de_investigacion -> getNombre() . " " . $currentGrupo_de_investigacion -> getApellido() . " " . $currentGrupo_de_investigacion -> getClasificacion() . " " . $currentGrupo_de_investigacion -> getLider() . " " . $currentGrupo_de_investigacion -> getArea() . " " . $currentGrupo_de_investigacion -> getPagina_web() . "</option>";
+								echo ">" . $currentGrupo_de_investigacion -> getNombre() . " " . $currentGrupo_de_investigacion -> getClasificacion() . " " . $currentGrupo_de_investigacion -> getLider() . " " . $currentGrupo_de_investigacion -> getArea() . " " . $currentGrupo_de_investigacion -> getPagina_web() . "</option>";
 							}
 							?>
 						</select>

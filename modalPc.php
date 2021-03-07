@@ -53,7 +53,7 @@ $pc -> select();
 		</tr>
 		<tr>
 			<th>Grupo_de_investigacion</th>
-			<td><?php echo $pc -> getGrupo_de_investigacion() -> getNombre() . " " . $pc -> getGrupo_de_investigacion() -> getApellido() . " " . $pc -> getGrupo_de_investigacion() -> getClasificacion() . " " . $pc -> getGrupo_de_investigacion() -> getLider() . " " . $pc -> getGrupo_de_investigacion() -> getArea() . " " . $pc -> getGrupo_de_investigacion() -> getPagina_web() ?></td>
+			<td><?php echo $pc -> getGrupo_de_investigacion() -> getNombre() . " " . $pc -> getGrupo_de_investigacion() -> getClasificacion() . " " . $pc -> getGrupo_de_investigacion() -> getLider() . " " . $pc -> getGrupo_de_investigacion() -> getArea() . " " . $pc -> getGrupo_de_investigacion() -> getPagina_web() ?></td>
 		</tr>
 	</table>
 </div>

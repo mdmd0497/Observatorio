@@ -14,7 +14,7 @@ if(!empty($_GET['action']) && $_GET['action']=="delete"){
 	$deleteCultura_investigativa = new Cultura_investigativa($_GET['idCultura_investigativa']);
 	$deleteCultura_investigativa -> select();
 	if($deleteCultura_investigativa -> delete()){
-		$nameGrupo_de_investigacion = $deleteCultura_investigativa -> getGrupo_de_investigacion() -> getNombre() . " " . $deleteCultura_investigativa -> getGrupo_de_investigacion() -> getApellido() . " " . $deleteCultura_investigativa -> getGrupo_de_investigacion() -> getClasificacion() . " " . $deleteCultura_investigativa -> getGrupo_de_investigacion() -> getLider() . " " . $deleteCultura_investigativa -> getGrupo_de_investigacion() -> getArea() . " " . $deleteCultura_investigativa -> getGrupo_de_investigacion() -> getPagina_web();
+		$nameGrupo_de_investigacion = $deleteCultura_investigativa -> getGrupo_de_investigacion() -> getNombre();
 		$user_ip = getenv('REMOTE_ADDR');
 		$agent = $_SERVER["HTTP_USER_AGENT"];
 		$browser = "-";
@@ -51,7 +51,7 @@ if(!empty($_GET['action']) && $_GET['action']=="delete"){
 <div class="container-fluid">
 	<div class="card">
 		<div class="card-header">
-			<h4 class="card-title">Consultar Cultura_investigativa de Grupo_de_investigacion: <em><?php echo $grupo_de_investigacion -> getNombre() . " " . $grupo_de_investigacion -> getApellido() . " " . $grupo_de_investigacion -> getClasificacion() . " " . $grupo_de_investigacion -> getLider() . " " . $grupo_de_investigacion -> getArea() . " " . $grupo_de_investigacion -> getPagina_web() ?></em></h4>
+			<h4 class="card-title">Consultar Cultura_investigativa de Grupo_de_investigacion: <em><?php echo $grupo_de_investigacion -> getNombre() ?></em></h4>
 		</div>
 		<div class="card-body">
 		<?php if(isset($_GET['action']) && $_GET['action']=="delete"){ ?>
@@ -118,7 +118,7 @@ if(!empty($_GET['action']) && $_GET['action']=="delete"){
 						echo "<tr><td>" . $counter . "</td>";
 						echo "<td>" . $currentCultura_investigativa -> getVariable() . "</td>";
 						echo "<td>" . $currentCultura_investigativa -> getCalificacion() . "</td>";
-						echo "<td><a href='modalGrupo_de_investigacion.php?idGrupo_de_investigacion=" . $currentCultura_investigativa -> getGrupo_de_investigacion() -> getIdGrupo_de_investigacion() . "' data-toggle='modal' data-target='#modalCultura_investigativa' >" . $currentCultura_investigativa -> getGrupo_de_investigacion() -> getNombre() . " " . $currentCultura_investigativa -> getGrupo_de_investigacion() -> getApellido() . " " . $currentCultura_investigativa -> getGrupo_de_investigacion() -> getClasificacion() . " " . $currentCultura_investigativa -> getGrupo_de_investigacion() -> getLider() . " " . $currentCultura_investigativa -> getGrupo_de_investigacion() -> getArea() . " " . $currentCultura_investigativa -> getGrupo_de_investigacion() -> getPagina_web() . "</a></td>";
+						echo "<td><a href='modalGrupo_de_investigacion.php?idGrupo_de_investigacion=" . $currentCultura_investigativa -> getGrupo_de_investigacion() -> getIdGrupo_de_investigacion() . "' data-toggle='modal' data-target='#modalCultura_investigativa' >" . $currentCultura_investigativa -> getGrupo_de_investigacion() -> getNombre() . "</a></td>";
 						echo "<td class='text-right' nowrap>";
 						if($_SESSION['entity'] == 'Administrador' || $_SESSION['entity'] == 'Grupo_de_investigacion') {
 							echo "<a href='index.php?pid=" . base64_encode("ui/cultura_investigativa/updateCultura_investigativa.php") . "&idCultura_investigativa=" . $currentCultura_investigativa -> getIdCultura_investigativa() . "'><span class='fas fa-edit' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='Editar Cultura_investigativa' ></span></a> ";

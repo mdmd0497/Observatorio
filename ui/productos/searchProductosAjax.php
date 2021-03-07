@@ -22,7 +22,7 @@
 			echo "<tr><td>" . $counter . "</td>";
 			echo "<td>" . str_ireplace($_GET['search'], "<mark>" . $_GET['search'] . "</mark>", $currentProductos -> getVariable()) . "</td>";
 			echo "<td>" . str_ireplace($_GET['search'], "<mark>" . $_GET['search'] . "</mark>", $currentProductos -> getCalificacion()) . "</td>";
-			echo "<td>" . $currentProductos -> getGrupo_de_investigacion() -> getNombre() . " " . $currentProductos -> getGrupo_de_investigacion() -> getApellido() . " " . $currentProductos -> getGrupo_de_investigacion() -> getClasificacion() . " " . $currentProductos -> getGrupo_de_investigacion() -> getLider() . " " . $currentProductos -> getGrupo_de_investigacion() -> getArea() . " " . $currentProductos -> getGrupo_de_investigacion() -> getPagina_web() . "</td>";
+			echo "<td>" . $currentProductos -> getGrupo_de_investigacion() -> getNombre() . "</td>";
 						echo "<td class='text-right' nowrap>";
 						if($_GET['entity'] == 'Administrador' || $_GET['entity'] == 'Grupo_de_investigacion') {
 							echo "<a href='index.php?pid=" . base64_encode("ui/productos/updateProductos.php") . "&idProductos=" . $currentProductos -> getIdProductos() . "'><span class='fas fa-edit' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='Editar Productos' ></span></a> ";

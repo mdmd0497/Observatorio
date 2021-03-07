@@ -12,7 +12,7 @@ if(isset($_GET['action']) && $_GET['action']=="delete"){
 	$deleteGestion_del_conocimiento = new Gestion_del_conocimiento($_GET['idGestion_del_conocimiento']);
 	$deleteGestion_del_conocimiento -> select();
 	if($deleteGestion_del_conocimiento -> delete()){
-		$nameGrupo_de_investigacion = $deleteGestion_del_conocimiento -> getGrupo_de_investigacion() -> getNombre() . " " . $deleteGestion_del_conocimiento -> getGrupo_de_investigacion() -> getApellido() . " " . $deleteGestion_del_conocimiento -> getGrupo_de_investigacion() -> getClasificacion() . " " . $deleteGestion_del_conocimiento -> getGrupo_de_investigacion() -> getLider() . " " . $deleteGestion_del_conocimiento -> getGrupo_de_investigacion() -> getArea() . " " . $deleteGestion_del_conocimiento -> getGrupo_de_investigacion() -> getPagina_web();
+		$nameGrupo_de_investigacion = $deleteGestion_del_conocimiento -> getGrupo_de_investigacion() -> getNombre();
 		$user_ip = getenv('REMOTE_ADDR');
 		$agent = $_SERVER["HTTP_USER_AGENT"];
 		$browser = "-";
@@ -116,7 +116,7 @@ if(isset($_GET['action']) && $_GET['action']=="delete"){
 						echo "<tr><td>" . $counter . "</td>";
 						echo "<td>" . $currentGestion_del_conocimiento -> getVariable() . "</td>";
 						echo "<td>" . $currentGestion_del_conocimiento -> getCalificacion() . "</td>";
-						echo "<td><a href='modalGrupo_de_investigacion.php?idGrupo_de_investigacion=" . $currentGestion_del_conocimiento -> getGrupo_de_investigacion() -> getIdGrupo_de_investigacion() . "' data-toggle='modal' data-target='#modalGestion_del_conocimiento' >" . $currentGestion_del_conocimiento -> getGrupo_de_investigacion() -> getNombre() . " " . $currentGestion_del_conocimiento -> getGrupo_de_investigacion() -> getApellido() . " " . $currentGestion_del_conocimiento -> getGrupo_de_investigacion() -> getClasificacion() . " " . $currentGestion_del_conocimiento -> getGrupo_de_investigacion() -> getLider() . " " . $currentGestion_del_conocimiento -> getGrupo_de_investigacion() -> getArea() . " " . $currentGestion_del_conocimiento -> getGrupo_de_investigacion() -> getPagina_web() . "</a></td>";
+						echo "<td><a href='modalGrupo_de_investigacion.php?idGrupo_de_investigacion=" . $currentGestion_del_conocimiento -> getGrupo_de_investigacion() -> getIdGrupo_de_investigacion() . "' data-toggle='modal' data-target='#modalGestion_del_conocimiento' >" . $currentGestion_del_conocimiento -> getGrupo_de_investigacion() -> getNombre() . "</a></td>";
 						echo "<td class='text-right' nowrap>";
 						if($_SESSION['entity'] == 'Administrador' || $_SESSION['entity'] == 'Grupo_de_investigacion') {
 							echo "<a href='index.php?pid=" . base64_encode("ui/gestion_del_conocimiento/updateGestion_del_conocimiento.php") . "&idGestion_del_conocimiento=" . $currentGestion_del_conocimiento -> getIdGestion_del_conocimiento() . "'><span class='fas fa-edit' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='Editar Gestion_del_conocimiento' ></span></a> ";

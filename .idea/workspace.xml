@@ -37,9 +37,9 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/ui/pc" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -64,7 +64,13 @@
       <workItem from="1614272814693" duration="6692000" />
       <workItem from="1614280756271" duration="3169000" />
       <workItem from="1614399482168" duration="629000" />
-      <workItem from="1614469088311" duration="7611000" />
+      <workItem from="1614469088311" duration="8140000" />
+      <workItem from="1614716225311" duration="56000" />
+      <workItem from="1614716300527" duration="67000" />
+      <workItem from="1614728578282" duration="2403000" />
+      <workItem from="1614774090387" duration="1131000" />
+      <workItem from="1614959846452" duration="595000" />
+      <workItem from="1615068654789" duration="15438000" />
     </task>
     <servers />
   </component>
