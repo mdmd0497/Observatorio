@@ -83,5 +83,10 @@ class PcDAO{
 		return "delete from Pc
 				where idPc = '" . $this -> idPc . "'";
 	}
+
+	function consultarTotalRegistros($id){
+		return "select count(grupo_de_investigacion_idGrupo_de_investigacion)
+                from pc where grupo_de_investigacion_idGrupo_de_investigacion = '".$id."'";
+	}
 }
 ?>

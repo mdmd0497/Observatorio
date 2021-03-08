@@ -5,6 +5,11 @@ if(isset($_POST['nombre'])){
 	$nombre=$_POST['nombre'];
 }
 
+$apellido="";
+if(isset($_POST['apellido'])){
+    $apellido=$_POST['apellido'];
+}
+
 $correo="";
 if(isset($_POST['correo'])){
 	$correo=$_POST['correo'];
@@ -34,7 +39,7 @@ if(isset($_POST['state'])){
 	$state=$_POST['state'];
 }
 if(isset($_POST['insert'])){
-	$newGrupo_de_investigacion = new Grupo_de_investigacion("", $nombre, $apellido, $correo, $clave, "", $Clasificacion, $Lider, $Area, $Pagina_web, $state);
+	$newGrupo_de_investigacion = new Grupo_de_investigacion("", $nombre, $correo, $clave, "", $Clasificacion, $Lider, $Area, $Pagina_web, $state);
 	$newGrupo_de_investigacion -> insert();
 	$user_ip = getenv('REMOTE_ADDR');
 	$agent = $_SERVER["HTTP_USER_AGENT"];

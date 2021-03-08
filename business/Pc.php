@@ -222,5 +222,13 @@ class Pc {
 		$this -> connection -> close();
 		return $success;
 	}
+
+	function consultarTotalRegistros($id){
+		$this -> connection -> open();
+		$this -> connection -> run($this -> pcDAO -> consultarTotalRegistros($id));
+		$this -> connection -> close();
+		$resultado = $this -> connection -> fetchRow();
+		return $resultado[0];
+	}
 }
 ?>
