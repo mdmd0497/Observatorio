@@ -73,6 +73,25 @@ $administrador -> select();
 					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/explotacion_base_tecnologica/searchExplotacion_base_tecnologica.php") ?>">Explotacion_base_tecnologica</a>
 				</div>
 			</li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Consultar graficas</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/pc/graficaPc.php") ?>">Perfil de colaboracion</a>
+                    <a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/ppnc/searchPpnc.php") ?>">Perfil de productos resultado de actividades de generación de nuevo conocimiento</a>
+                    <a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/ppaidi/searchPpaidi.php") ?>">Perfil de productos resultado de actividades de Desarrollo Tecnológico e Innovación</a>
+                    <a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/ppfr/searchPpfr.php") ?>">Perfil de productos resultado de actividades relacionadas con la Formación del Recurso Humano en CTI</a>
+                    <a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/productos/searchProductos.php") ?>">Productos</a>
+                    <a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/cultura_investigativa/searchCultura_investigativa.php") ?>">Cultura_investigativa</a>
+                    <a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/inversion/searchInversion.php") ?>">Inversion</a>
+                    <a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/empresas_centros_investigacion/searchEmpresas_centros_investigacion.php") ?>">Empresas_centros_investigacion</a>
+                    <a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/financiacion/searchFinanciacion.php") ?>">Financiacion</a>
+                    <a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/monitoreo_ai/searchMonitoreo_ai.php") ?>">Monitoreo_ai</a>
+                    <a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/monitoreo_ei/searchMonitoreo_ei.php") ?>">Monitoreo_ei</a>
+                    <a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/gestion_del_conocimiento/searchGestion_del_conocimiento.php") ?>">Gestion_del_conocimiento</a>
+                    <a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/vigilancia_tecnologica/searchVigilancia_tecnologica.php") ?>">Vigilancia_tecnologica</a>
+                    <a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/explotacion_base_tecnologica/searchExplotacion_base_tecnologica.php") ?>">Explotacion_base_tecnologica</a>
+                </div>
+            </li>
 			<li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Log</a>
 				<div class="dropdown-menu">

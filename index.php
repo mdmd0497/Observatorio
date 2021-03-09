@@ -72,6 +72,7 @@ $webPages = array(
 	'ui/explotacion_base_tecnologica/selectAllExplotacion_base_tecnologicaByGrupo_de_investigacion.php',
 	'ui/grupo_de_investigacion/updateFotoGrupo_de_investigacion.php',
 	'ui/pc/insertPc.php',
+	'ui/pc/graficaPc.php',
 	'ui/pc/updatePc.php',
 	'ui/pc/selectAllPc.php',
 	'ui/pc/searchPc.php',
@@ -147,6 +148,8 @@ if(isset($_GET['logOut'])){
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 		<script charset="utf-8">
 			$(function () { 

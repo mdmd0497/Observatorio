@@ -77,6 +77,12 @@ class Grupo_de_investigacionDAO{
 				where idGrupo_de_investigacion = '" . $this -> idGrupo_de_investigacion . "'";
 	}
 
+	function selectG($id) {
+		return "select idGrupo_de_investigacion, nombre, correo, clave, foto, Clasificacion, Lider, Area, Pagina_web, state
+				from Grupo_de_investigacion
+				where idGrupo_de_investigacion = '" . $id. "'";
+	}
+
 	function selectAll() {
 		return "select idGrupo_de_investigacion, nombre, correo, clave, foto, Clasificacion, Lider, Area, Pagina_web, state
 				from Grupo_de_investigacion";

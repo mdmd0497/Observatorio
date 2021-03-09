@@ -146,7 +146,7 @@ if ($resultado > 0){
 		<div class="col-md-8">
 			<div class="card">
 				<div class="card-header">
-					<h4 class="card-title">Crear  PERFIL DE COLABORACION</h4>
+					<h4 class="card-title">Crear PERFIL DE COLABORACION</h4>
 				</div>
 				<div class="card-body">
                     <?php if($processed){ ?>

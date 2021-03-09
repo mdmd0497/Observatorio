@@ -2,21 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e65c9aa-d75e-4cbd-893f-a2beb5059a87" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/ui/pc/graficaPc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/business/Grupo_de_investigacion.php" beforeDir="false" afterPath="$PROJECT_DIR$/business/Grupo_de_investigacion.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/business/Pc.php" beforeDir="false" afterPath="$PROJECT_DIR$/business/Pc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/business/Ppaidi.php" beforeDir="false" afterPath="$PROJECT_DIR$/business/Ppaidi.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/business/Ppfr.php" beforeDir="false" afterPath="$PROJECT_DIR$/business/Ppfr.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business/Ppnc.php" beforeDir="false" afterPath="$PROJECT_DIR$/business/Ppnc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/persistence/Grupo_de_investigacionDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/persistence/Grupo_de_investigacionDAO.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/persistence/PcDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/persistence/PcDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/persistence/PpaidiDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/persistence/PpaidiDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/persistence/PpfrDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/persistence/PpfrDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/persistence/PpncDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/persistence/PpncDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/grupo_de_investigacion/insertGrupo_de_investigacion.php" beforeDir="false" afterPath="$PROJECT_DIR$/ui/grupo_de_investigacion/insertGrupo_de_investigacion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/menuAdministrador.php" beforeDir="false" afterPath="$PROJECT_DIR$/ui/menuAdministrador.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/pc/insertPc.php" beforeDir="false" afterPath="$PROJECT_DIR$/ui/pc/insertPc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/ppaidi/insertPpaidi.php" beforeDir="false" afterPath="$PROJECT_DIR$/ui/ppaidi/insertPpaidi.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/ppfr/insertPpfr.php" beforeDir="false" afterPath="$PROJECT_DIR$/ui/ppfr/insertPpfr.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/ppnc/insertPpnc.php" beforeDir="false" afterPath="$PROJECT_DIR$/ui/ppnc/insertPpnc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +78,8 @@
       <workItem from="1614399482168" duration="629000" />
       <workItem from="1614469088311" duration="7611000" />
       <workItem from="1615085642229" duration="682000" />
-      <workItem from="1615223554642" duration="14339000" />
+      <workItem from="1615223554642" duration="14571000" />
+      <workItem from="1615316574726" duration="8720000" />
     </task>
     <servers />
   </component>

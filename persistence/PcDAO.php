@@ -88,5 +88,12 @@ class PcDAO{
 		return "select count(grupo_de_investigacion_idGrupo_de_investigacion)
                 from pc where grupo_de_investigacion_idGrupo_de_investigacion = '".$id."'";
 	}
+
+	function consultarGraficaPc($id){
+		return "select idPc, indicador, abreviatura, valor_maximo, valor_indicador, grupo_de_investigacion_idGrupo_de_investigacion
+				from Pc
+				where grupo_de_investigacion_idGrupo_de_investigacion = '" . $id . "'";
+	}
+
 }
 ?>

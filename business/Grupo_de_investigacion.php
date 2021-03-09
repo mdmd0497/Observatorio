@@ -194,6 +194,23 @@ class Grupo_de_investigacion {
 		$this -> state = $result[9];
 	}
 
+	function selectG($id){
+		$this -> connection -> open();
+		$this -> connection -> run($this -> grupo_de_investigacionDAO -> selectG($id));
+		$result = $this -> connection -> fetchRow();
+		$this -> connection -> close();
+		$this -> idGrupo_de_investigacion = $result[0];
+		$this -> nombre = $result[1];
+		$this -> correo = $result[2];
+		$this -> clave = $result[3];
+		$this -> foto = $result[4];
+		$this -> Clasificacion = $result[5];
+		$this -> Lider = $result[6];
+		$this -> Area = $result[7];
+		$this -> Pagina_web = $result[8];
+		$this -> state = $result[9];
+	}
+
 	function selectAll(){
 		$this -> connection -> open();
 		$this -> connection -> run($this -> grupo_de_investigacionDAO -> selectAll());
