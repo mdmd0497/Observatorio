@@ -2,17 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e65c9aa-d75e-4cbd-893f-a2beb5059a87" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ui/pc/graficaPc.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/ppaidi/graficaPpaidi.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/ppfr/graficaPpfr.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/ppnc/graficaPpnc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business/Grupo_de_investigacion.php" beforeDir="false" afterPath="$PROJECT_DIR$/business/Grupo_de_investigacion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business/Pc.php" beforeDir="false" afterPath="$PROJECT_DIR$/business/Pc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/business/Ppaidi.php" beforeDir="false" afterPath="$PROJECT_DIR$/business/Ppaidi.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/business/Ppfr.php" beforeDir="false" afterPath="$PROJECT_DIR$/business/Ppfr.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business/Ppnc.php" beforeDir="false" afterPath="$PROJECT_DIR$/business/Ppnc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/persistence/Grupo_de_investigacionDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/persistence/Grupo_de_investigacionDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/persistence/PcDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/persistence/PcDAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/persistence/PpaidiDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/persistence/PpaidiDAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/persistence/PpfrDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/persistence/PpfrDAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/persistence/PpncDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/persistence/PpncDAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/grupo_de_investigacion/selectAllGrupo_de_investigacion.php" beforeDir="false" afterPath="$PROJECT_DIR$/ui/grupo_de_investigacion/selectAllGrupo_de_investigacion.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/menuAdministrador.php" beforeDir="false" afterPath="$PROJECT_DIR$/ui/menuAdministrador.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/pc/insertPc.php" beforeDir="false" afterPath="$PROJECT_DIR$/ui/pc/insertPc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/menuGrupo_de_investigacion.php" beforeDir="false" afterPath="$PROJECT_DIR$/ui/menuGrupo_de_investigacion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/menuUsuario_ud.php" beforeDir="false" afterPath="$PROJECT_DIR$/ui/menuUsuario_ud.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/pc/graficaPc.php" beforeDir="false" afterPath="$PROJECT_DIR$/ui/pc/graficaPc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/sessionGrupo_de_investigacion.php" beforeDir="false" afterPath="$PROJECT_DIR$/ui/sessionGrupo_de_investigacion.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,13 +55,16 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/ui/pc" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ui/ppfr" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Observatorio\ui\ppfr" />
+      <recent name="C:\xampp\htdocs\Observatorio\ui\ppaidi" />
+      <recent name="C:\xampp\htdocs\Observatorio\ui\ppnc" />
       <recent name="C:\xampp\htdocs\Observatorio\ui\pc" />
       <recent name="C:\xampp\htdocs\Observatorio" />
     </key>
@@ -80,6 +89,7 @@
       <workItem from="1615085642229" duration="682000" />
       <workItem from="1615223554642" duration="14571000" />
       <workItem from="1615316574726" duration="8720000" />
+      <workItem from="1615479864121" duration="11669000" />
     </task>
     <servers />
   </component>

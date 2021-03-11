@@ -29,7 +29,7 @@ if(isset($_GET['action']) && $_GET['action']=="delete"){
 			$browser = "Safari";
 		}
 		if($_SESSION['entity'] == 'Administrador'){
-			$logAdministrador = new LogAdministrador("","Delete Grupo_de_investigacion", "Nombre: " . $deleteGrupo_de_investigacion -> getNombre() . ";; Apellido: " . $deleteGrupo_de_investigacion -> getApellido() . ";; Correo: " . $deleteGrupo_de_investigacion -> getCorreo() . ";; Clave: " . $deleteGrupo_de_investigacion -> getClave() . ";; Clasificacion: " . $deleteGrupo_de_investigacion -> getClasificacion() . ";; Lider: " . $deleteGrupo_de_investigacion -> getLider() . ";; Area: " . $deleteGrupo_de_investigacion -> getArea() . ";; Pagina_web: " . $deleteGrupo_de_investigacion -> getPagina_web() . ";; State: " . $deleteGrupo_de_investigacion -> getState(), date("Y-m-d"), date("H:i:s"), $user_ip, PHP_OS, $browser, $_SESSION['id']);
+			$logAdministrador = new LogAdministrador("","Delete Grupo_de_investigacion", "Nombre: " . $deleteGrupo_de_investigacion -> getNombre() . ";; Correo: " . $deleteGrupo_de_investigacion -> getCorreo() . ";; Clave: " . $deleteGrupo_de_investigacion -> getClave() . ";; Clasificacion: " . $deleteGrupo_de_investigacion -> getClasificacion() . ";; Lider: " . $deleteGrupo_de_investigacion -> getLider() . ";; Area: " . $deleteGrupo_de_investigacion -> getArea() . ";; Pagina_web: " . $deleteGrupo_de_investigacion -> getPagina_web() . ";; State: " . $deleteGrupo_de_investigacion -> getState(), date("Y-m-d"), date("H:i:s"), $user_ip, PHP_OS, $browser, $_SESSION['id']);
 			$logAdministrador -> insert();
 		}
 		else if($_SESSION['entity'] == 'Usuario_ud'){

@@ -202,5 +202,11 @@ class PpfrDAO{
 		return "select count(grupo_de_investigacion_idGrupo_de_investigacion)
                 from ppfr where grupo_de_investigacion_idGrupo_de_investigacion = '".$id."'";
 	}
+
+	function consultarGraficaPpfr($id){
+		return "select idPpfr, subtipo_de_producto, abreviatura, valor_maximo, valor_indicador, grupo_de_investigacion_idGrupo_de_investigacion
+				from Ppfr
+				where grupo_de_investigacion_idGrupo_de_investigacion = '" . $id . "'";
+	}
 }
 ?>

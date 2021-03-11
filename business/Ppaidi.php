@@ -422,5 +422,23 @@ class Ppaidi {
 		$resultado = $this -> connection -> fetchRow();
 		return $resultado[0];
 	}
+
+	function consultarGraficaPpaidi($id){
+		$this -> connection -> open();
+		$this -> connection -> run($this -> ppaidiDAO -> consultarGraficaPpaidi($id));
+		$pcs = array();
+		while ($result = $this -> connection -> fetchRow()){
+			$grupo_de_investigacion = new Grupo_de_investigacion($result[5]);
+			$grupo_de_investigacion -> select();
+			array_push($pcs, new Ppaidi($result[0], $result[1], $result[2],
+				"", "", "", "",
+				"", "","", "",
+				$result[3], $result[4],"", "", "",
+				"","", "", "",
+				"", $grupo_de_investigacion));
+		}
+		$this -> connection -> close();
+		return $pcs;
+	}
 }
 ?>

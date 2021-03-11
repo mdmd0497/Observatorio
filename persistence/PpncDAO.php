@@ -187,5 +187,11 @@ class PpncDAO{
 		return "select count(grupo_de_investigacion_idGrupo_de_investigacion)
                 from ppnc where grupo_de_investigacion_idGrupo_de_investigacion = '".$id."'";
 	}
+
+	function consultarGraficaPpnc($id){
+		return "select idPpnc, subtipo_de_producto, abreviatura, valor_maximo, valor_indicador, grupo_de_investigacion_idGrupo_de_investigacion
+				from Ppnc
+				where grupo_de_investigacion_idGrupo_de_investigacion = '" . $id . "'";
+	}
 }
 ?>

@@ -20,10 +20,6 @@ $grupo_de_investigacion -> select();
 								<td><?php echo $grupo_de_investigacion -> getNombre() ?></td>
 							</tr>
 							<tr>
-								<th>Apellido</th>
-								<td><?php echo $grupo_de_investigacion -> getApellido() ?></td>
-							</tr>
-							<tr>
 								<th>Correo</th>
 								<td><?php echo $grupo_de_investigacion -> getCorreo() ?></td>
 							</tr>
@@ -57,7 +53,7 @@ $grupo_de_investigacion -> select();
 			</div>
 		</div>
 		<div class="card-footer">
-		<p><?php echo "Su rol es: Grupo_de_investigacion"; ?></p>
+		<p><?php echo "Su rol es: Grupo de investigacion"; ?></p>
 		</div>
 	</div>
 </div>

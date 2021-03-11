@@ -77,9 +77,9 @@ $administrador -> select();
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Consultar graficas</a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/pc/graficaPc.php") ?>">Perfil de colaboracion</a>
-                    <a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/ppnc/searchPpnc.php") ?>">Perfil de productos resultado de actividades de generación de nuevo conocimiento</a>
-                    <a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/ppaidi/searchPpaidi.php") ?>">Perfil de productos resultado de actividades de Desarrollo Tecnológico e Innovación</a>
-                    <a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/ppfr/searchPpfr.php") ?>">Perfil de productos resultado de actividades relacionadas con la Formación del Recurso Humano en CTI</a>
+                    <a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/ppnc/graficaPpnc.php") ?>">Perfil de productos resultado de actividades de generación de nuevo conocimiento</a>
+                    <a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/ppaidi/graficaPpaidi.php") ?>">Perfil de productos resultado de actividades de Desarrollo Tecnológico e Innovación</a>
+                    <a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/ppfr/graficaPpfr.php") ?>">Perfil de productos resultado de actividades relacionadas con la Formación del Recurso Humano en CTI</a>
                     <a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/productos/searchProductos.php") ?>">Productos</a>
                     <a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/cultura_investigativa/searchCultura_investigativa.php") ?>">Cultura_investigativa</a>
                     <a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("ui/inversion/searchInversion.php") ?>">Inversion</a>

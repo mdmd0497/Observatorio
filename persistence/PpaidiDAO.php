@@ -139,5 +139,11 @@ class PpaidiDAO{
 		return "select count(grupo_de_investigacion_idGrupo_de_investigacion)
                 from ppaidi where grupo_de_investigacion_idGrupo_de_investigacion = '".$id."'";
 	}
+
+	function consultarGraficaPpaidi($id){
+		return "select idPpaidi, subtipo_de_producto, abreviatura, valor_maximo, valor_indicador, grupo_de_investigacion_idGrupo_de_investigacion
+				from Ppaidi
+				where grupo_de_investigacion_idGrupo_de_investigacion = '" . $id . "'";
+	}
 }
 ?>

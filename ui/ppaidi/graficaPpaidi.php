@@ -9,12 +9,12 @@ if(isset($_GET['idGrupo_de_investigacion'])){
 }
 
 if (isset($_POST['generar'])) {
-    $pc = new Pc();
-    $registros = $pc->consultarGraficaPc($grupo_de_investigacion);
+    $ppaidi = new Ppaidi();
+    $registros = $ppaidi->consultarGraficaPpaidi($grupo_de_investigacion);
 
     $datos = "['Abreviatura', 'Valor'], ";
     foreach ($registros as $r) {
-        $datos .= "['" . $r->getAbreviatura() . " - ".$r -> getIndicador()."', " . 100 * ($r->getValor_indicador() / $r->getValor_maximo()) . "], ";
+        $datos .= "['" . $r->getAbreviatura() . " - ".$r->getSubtipo_de_producto()."', " . 100 * ($r->getValor_indicador() / $r->getValor_maximo()) . "], ";
     }
     $processed = true;
 }
@@ -25,11 +25,11 @@ if (isset($_POST['generar'])) {
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Gr&aacute;fica Perfil de Colaboraci&oacute;n</h4>
+                    <h4 class="card-title">Gr&aacute;fica Perfil de productos resultado de actividades de Desarrollo Tecnológico e Innovación</h4>
                 </div>
                 <div class="card-body">
 
-                    <form id="form" method="post" action="index.php?pid=<?php echo base64_encode("ui/pc/graficaPc.php") ?>" class="bootstrap-form needs-validation"   >
+                    <form id="form" method="post" action="index.php?pid=<?php echo base64_encode("ui/ppaidi/graficaPpaidi.php") ?>" class="bootstrap-form needs-validation"   >
                         <div class="form-group">
                             <label>Grupo de investigaci&oacute;n</label>
                             <?php
@@ -85,18 +85,19 @@ if (isset($_POST['generar'])) {
                                 }
 
                                 var options = {
-                                    title : "Perfil de Colaboracion",
+                                    title : "Perfil de productos resultado de actividades de Desarrollo Tecnológico e Innovación",
                                     pieHole: 0.4,
                                     sliceVisibilityThreshold:0,
                                     pieSliceText: opt_pieslicetext,
                                     tooltip: { trigger: opt_tooltip_trigger },
                                     colors: opt_color,
                                 };
-                                var chart = new google.visualization.PieChart(document.getElementById('donutchartPc'));
+
+                                var chart = new google.visualization.PieChart(document.getElementById('donutchartPpaidi'));
                                 chart.draw(data, options);
                             }
                         </script>
-                        <div class="text-center" id="donutchartPc" style="width: 600px; height: 500px;"></div>
+                        <div class="text-center" id="donutchartPpaidi" style="width: 600px; height: 500px;"></div>
                         <br>
                         <div class="alert alert-success" >Gr&aacute;fica de <?php echo $objGrupo_de_investigacion -> getNombre() ?>
                         </div>
@@ -136,13 +137,14 @@ if (isset($_POST['generar'])) {
                                 }]);
 
                                 var options = {
+
                                     annotations: {
                                         alwaysOutside: true
                                     },
-                                    title : "Perfil de Colaboracion",
-                                    width: 600,
-                                    height: 400,
-                                    bar: {groupWidth: "30%"},
+                                    title : "Perfil de productos resultado de actividades de Desarrollo Tecnológico e Innovación",
+                                    width: 700,
+                                    height: 700,
+                                    bar: {groupWidth: "15%"},
                                     hAxis: {
                                         viewWindow: {
                                             min: 0,
@@ -152,11 +154,11 @@ if (isset($_POST['generar'])) {
                                     }
                                 };
 
-                                var chart = new google.visualization.BarChart(document.getElementById('barchartPc'));
+                                var chart = new google.visualization.BarChart(document.getElementById('barchartPpaidi'));
                                 chart.draw(view, options);
                             }
                         </script>
-                        <div class="text-center" id="barchartPc" style="width: 600px; height: 500px;"></div>
+                        <div class="text-center" id="barchartPpaidi" style="width: 700px; height: 700px;"></div>
                     <?php } ?>
                 </div>
             </div>
